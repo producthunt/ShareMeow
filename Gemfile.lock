@@ -28,8 +28,10 @@ GEM
     aws-sdk-resources (2.1.31)
       aws-sdk-core (= 2.1.31)
     builder (3.2.2)
-    byebug (6.0.2)
+    byebug (5.0.0)
+      columnize (= 0.9.0)
     coderay (1.1.0)
+    columnize (0.9.0)
     diff-lcs (1.2.5)
     dotenv (2.0.2)
     erubis (2.7.0)
@@ -47,6 +49,9 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    pry-byebug (3.2.0)
+      byebug (~> 5.0)
+      pry (~> 0.10)
     puma (2.14.0)
     rack (1.6.4)
     rack-protection (1.5.3)
@@ -95,15 +100,15 @@ DEPENDENCIES
   aws-sdk (~> 2)
   builder
   bundler
-  byebug
   dotenv
   erubis
   i18n
   imgkit
   json
-  pry
+  pry-byebug
   puma
   rack-standards
+  rack-test
   rake
   rspec
   rubocop

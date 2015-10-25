@@ -18,8 +18,8 @@ gem 'aws-sdk', '~> 2'
 
 group :development, :test do
   gem 'rspec'
-  gem 'pry'
-  gem 'byebug'
+  gem 'rack-test'
+  gem 'pry-byebug'
   gem 'rubocop'
 end
 
