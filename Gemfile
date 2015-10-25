@@ -20,6 +20,7 @@ group :development, :test do
   gem 'rspec'
   gem 'pry'
   gem 'byebug'
+  gem 'rubocop'
 end
 
 gem 'bundler', group: :development

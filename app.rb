@@ -3,8 +3,8 @@ require 'bundler'
 
 # Setup load paths
 Bundler.require
-$: << File.expand_path('../', __FILE__)
-$: << File.expand_path('../lib', __FILE__)
+$LOAD_PATH << File.expand_path('../', __FILE__)
+$LOAD_PATH << File.expand_path('../lib', __FILE__)
 
 require 'dotenv'
 Dotenv.load
