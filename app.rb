@@ -17,7 +17,6 @@ require 'active_support/json'
 
 Dir['lib/**/*.rb'].sort.each { |file| require file }
 
-require 'app/models'
 require 'app/helpers'
 require 'app/routes'
 
@@ -39,5 +38,3 @@ module ShareMeow
     use Routes::Base
   end
 end
-
-include ShareMeow::Models
