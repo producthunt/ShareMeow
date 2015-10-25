@@ -14,6 +14,7 @@ gem 'json'
 gem 'dotenv'
 gem 'imgkit'
 gem 'wkhtmltoimage-binary'
+gem 'aws-sdk', '~> 2'
 
 group :development, :test do
   gem 'rspec'
