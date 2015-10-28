@@ -1,4 +1,6 @@
 ## ShareMeow
+[![Build
+Status](https://travis-ci.org/producthunt/ShareMeow.svg?branch=master)](https://travis-ci.org/producthunt/ShareMeow)
 
 ## Development
 
@@ -10,7 +12,7 @@ To install this gem onto your local machine, run `bundle exec rake install`.
 
 Want to make this better? Great! :smile:
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/producthun/share_meow. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/producthunt/ShareMeow. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
 ## License
