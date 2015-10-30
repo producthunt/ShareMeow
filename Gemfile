@@ -23,4 +23,6 @@ group :development, :test do
   gem 'rubocop'
 end
 
-gem 'bundler', group: :development
+group :development do
+  gem 'bundler'
+end
