@@ -19,6 +19,7 @@ Dir['lib/**/*.rb'].sort.each { |file| require file }
 
 require 'app/helpers'
 require 'app/routes'
+require 'app/render_image'
 
 module ShareMeow
   class App < Sinatra::Application
