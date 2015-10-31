@@ -1,6 +1,3 @@
-require 'app/image_templates/base'
-require 'app/image_templates/comment'
-
 module ShareMeow
   module RenderImage
     def self.call(template:, options: {})
