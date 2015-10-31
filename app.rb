@@ -18,7 +18,7 @@ require 'active_support/json'
 Dir['lib/**/*.rb'].sort.each { |file| require file }
 Dir['app/image_templates/*.rb'].each { |file| require file }
 
-require 'app/helpers'
+require 'app/authorization'
 require 'app/routes'
 require 'app/render_image'
 
