@@ -17,9 +17,6 @@ module ShareMeow
       get '/' do
         'ShareMeow 😻'
       end
-
-      helpers Helpers
-      helpers Sinatra::ContentFor
     end
   end
 end
