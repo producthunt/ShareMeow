@@ -1,4 +1,5 @@
 ENV['RACK_ENV'] = 'test'
+ENV['SHARE_MEOW_KEY'] = 'fake_share_meow_key_for_testing_only'
 
 require File.expand_path('../../app', __FILE__)
 

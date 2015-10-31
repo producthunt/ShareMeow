@@ -2,3 +2,37 @@ tmp
 .DS_Store
 .env
 mails
+.gitkeep
+# Ignore bundler config.
+/.bundle
+
+# Ignore the default SQLite database.
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+# Ignore all logfiles and tempfiles.
+/log/*.log
+tmp/*
+*.swp
+/public/uploads/*
+
+# Ignore Vagrant
+.vagrant/*
+vagrant_ansible_inventory_default
+*.dump
+
+# env files
+/.env
+/.env.*
+!/.env.example
+
+dump.rdb
+vendor/bundle/*
+
+coverage/*
+.backup/*
+
+.vimrc.local
+.zshrc.local
+.DS_Store
+
