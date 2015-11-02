@@ -11,9 +11,7 @@ Dotenv.load
 
 # Require base
 require 'sinatra/base'
-require 'active_support'
-require 'active_support/core_ext'
-require 'active_support/json'
+require 'sinatra/param'
 
 Dir['lib/**/*.rb'].sort.each { |file| require file }
 Dir['app/image_templates/*.rb'].each { |file| require file }

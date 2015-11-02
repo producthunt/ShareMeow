@@ -2,6 +2,7 @@ module ShareMeow
   module Routes
     class Base < Sinatra::Application
       register ShareMeow::Authorization
+      register Sinatra::Param
 
       configure do
         set :logging, true
@@ -16,6 +17,14 @@ module ShareMeow
 
       get '/' do
         'ShareMeow 😻'
+      end
+
+      get '/image' do
+        content_type :json
+        param :digest, String, required: true
+        param :payload, Hash, required: true
+
+        'hi'
       end
     end
   end
