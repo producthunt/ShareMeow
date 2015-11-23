@@ -13,6 +13,8 @@ gem 'builder'
 gem 'json'
 gem 'dotenv'
 gem 'imgkit'
+gem 'rumoji'
+gem 'gemoji'
 gem 'wkhtmltoimage-binary'
 gem 'aws-sdk', '~> 2'
 

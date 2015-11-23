@@ -29,6 +29,7 @@ GEM
     diff-lcs (1.2.5)
     dotenv (2.0.2)
     erubis (2.7.0)
+    gemoji (2.1.0)
     i18n (0.7.0)
     imgkit (1.6.1)
     jmespath (1.1.3)
@@ -74,6 +75,7 @@ GEM
       rainbow (>= 1.99.1, < 3.0)
       ruby-progressbar (~> 1.4)
     ruby-progressbar (1.7.5)
+    rumoji (0.4.1)
     sinatra (1.4.6)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -93,6 +95,7 @@ DEPENDENCIES
   bundler
   dotenv
   erubis
+  gemoji
   i18n
   imgkit
   json
@@ -103,6 +106,7 @@ DEPENDENCIES
   rake
   rspec
   rubocop
+  rumoji
   sinatra
   sinatra-contrib!
   sinatra-param
