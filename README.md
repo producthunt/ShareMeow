@@ -2,6 +2,10 @@
 [![Build
 Status](https://travis-ci.org/producthunt/ShareMeow.svg?branch=master)](https://travis-ci.org/producthunt/ShareMeow)
 
+ShareMeow is a Ruby microservice for creating super shareable, tweetable,
+facebook-able images from your content :heart_eyes_cat:. You define a template (using HTML/CSS),
+pass it some parameters, and it will generate an image to you.
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake rspec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
