@@ -8,8 +8,14 @@ RSpec.shared_examples 'an ImageTemplate' do |options|
   end
 
   describe '#erb_template' do
-    it 'is a valid erb template' do
+    it 'is a valid file' do
       expect(File).to exist(image_template.erb_template)
+    end
+  end
+
+  describe '#css_stylesheet' do
+    it 'is a valid file' do
+      expect(File).to exist(image_template.css_stylesheet)
     end
   end
 
