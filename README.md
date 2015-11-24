@@ -6,6 +6,19 @@ ShareMeow is a Ruby microservice for creating super shareable, tweetable,
 facebook-able images from your content :heart_eyes_cat:. You define a template (using HTML/CSS),
 pass it some parameters, and it will generate an image to you.
 
+#### Custom Fonts
+To use a custom font, you'll need to add it to the `fonts` directory and then reference it in your templates CSS. Truetype/ttf font files work best.
+
+Here is example css using a font from [Google Fonts](https://www.google.com/fonts).
+```css
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url( '/fonts/SourceSansPro-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake rspec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
