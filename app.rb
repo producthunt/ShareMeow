@@ -26,8 +26,8 @@ module ShareMeow
       set :root, File.dirname(__FILE__)
 
       disable :method_override
-      disable :static
 
+      enable :static
       set :erb, escape_html: true
     end
 
