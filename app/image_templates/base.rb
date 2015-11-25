@@ -27,8 +27,8 @@ module ImageTemplates
       # optional
     end
 
-    def css_file
-      # optional
+    def css_stylesheet
+      'app/css/default.css'
     end
   end
 end
