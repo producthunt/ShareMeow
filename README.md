@@ -32,7 +32,7 @@ If you'd like to render emoji, you can use the `EmojiHelper` in your templates. 
 
 ```Ruby
 # images_templates/your_template.rb
-require 'emoji_helper'
+require 'app/emoji_helper'
 
 module ImageTemplates
   class YourTemplate < Base
