@@ -25,10 +25,15 @@ module ShareMeow
     configure do
       set :root, File.dirname(__FILE__)
 
+      if %i(development test).include? environment
+        set :base_url, 'http://localhost:3000'
+      else
+        set :base_url, ENV.fetch('BASE_URL')
+      end
+
       disable :method_override
 
       enable :static
-      set :erb, escape_html: true
     end
 
     use Rack::Deflater
