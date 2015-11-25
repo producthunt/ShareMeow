@@ -16,16 +16,32 @@ Info on security/authentication here
 Info on how to create a new template here. :smile:
 
 #### Custom Fonts
-To use a custom font, you'll need to add it to the `fonts` directory and then reference it in your templates CSS. Truetype/ttf font files work best.
-
 Here is example css using a font from [Google Fonts](https://www.google.com/fonts).
+
 ```css
 @font-face {
-  font-family: 'Source Sans Pro';
-  src: url( '/fonts/SourceSansPro-Regular.ttf') format('truetype');
-  font-weight: normal;
+  font-family: 'Roboto';
   font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Regular'), local('Roboto-Regular'), url(https://themes.googleusercontent.com/static/fonts/roboto/v10/2UX7WLTfW3W8TclTUvlFyQ.woff) format('woff');
 }
+```
+
+#### Emoji :smile:
+If you'd like to render emoji, you can use the `EmojiHelper` in your templates. It converts emoji to images.
+
+```Ruby
+# images_templates/your_template.rb
+require 'emoji_helper'
+
+module ImageTemplates
+  class YourTemplate < Base
+    def initialize(options = {})
+      options[:content] = EmojiHelper.emojify(options[:content])
+      super
+    end
+  end
+end
 ```
 
 ## Development
