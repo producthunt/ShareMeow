@@ -38,6 +38,8 @@ module ShareMeow
 
     use Rack::Deflater
     use Rack::Standards
+    use Rack::PostBodyContentTypeParser
+    use Rack::NestedParams
 
     # Routes
     use Routes::Base
