@@ -11,6 +11,9 @@ def app
   described_class
 end
 
+# Stub all Aws calls
+Aws.config[:stub_responses] = true
+
 RSpec.configure do |config|
   config.include Rack::Test::Methods
 
