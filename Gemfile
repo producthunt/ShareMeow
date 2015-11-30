@@ -5,6 +5,7 @@ gem 'sinatra', require: 'sinatra/base'
 gem 'sinatra-contrib', github: 'maccman/sinatra-contrib'
 gem 'sinatra-param', require: 'sinatra/param'
 gem 'sinatra-initializers'
+gem 'activesupport', require: false
 gem 'rack-standards'
 gem 'rack-contrib'
 gem 'puma'
