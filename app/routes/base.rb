@@ -10,8 +10,8 @@ module ShareMeow
 
         disable :method_override
         disable :protection
-        disable :static
 
+        enable :static
         enable :use_code
       end
 

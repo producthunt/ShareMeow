@@ -7,6 +7,27 @@ RSpec.shared_examples 'an ImageTemplate' do |options|
     end
   end
 
+  describe '#render_options' do
+    it 'returns an object containing the options needed by the erb template' do
+      render_options = image_template.render_options
+
+      options.each do |key, value|
+        expect(render_options.options[key.to_sym]).to eq value
+      end
+    end
+  end
+
+  describe '#filename' do
+    it 'return a jpg filename' do
+      expect(image_template.filename).to end_with('.jpg')
+    end
+
+    it 'includes template name' do
+      template_name = described_class.name.demodulize.downcase
+      expect(image_template.filename).to start_with("#{template_name}/")
+    end
+  end
+
   describe '#erb_template' do
     it 'is a valid file' do
       expect(File).to exist(image_template.erb_template)

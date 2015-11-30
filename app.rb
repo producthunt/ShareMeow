@@ -18,7 +18,7 @@ Dir['app/image_templates/*.rb'].each { |file| require file }
 
 require 'app/authorization'
 require 'app/routes'
-require 'app/render_image'
+require 'app/image'
 
 module ShareMeow
   class App < Sinatra::Application
