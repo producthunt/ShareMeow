@@ -22,6 +22,8 @@ require 'app/render_image'
 
 module ShareMeow
   class App < Sinatra::Application
+    register Sinatra::Initializers
+
     configure do
       set :root, File.dirname(__FILE__)
 
