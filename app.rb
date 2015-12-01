@@ -13,7 +13,8 @@ Dotenv.load
 require 'sinatra/base'
 require 'sinatra/param'
 
-Dir['lib/**/*.rb'].sort.each { |file| require file }
+require 'app/image_templates/base'
+
 Dir['app/image_templates/*.rb'].each { |file| require file }
 
 require 'app/routes'
