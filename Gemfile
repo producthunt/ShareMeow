@@ -8,6 +8,7 @@ gem 'sinatra-initializers'
 gem 'activesupport', require: false
 gem 'rack-standards'
 gem 'rack-contrib'
+gem 'redis-sinatra'
 gem 'puma'
 gem 'erubis'
 gem 'i18n'
@@ -22,10 +23,14 @@ gem 'wkhtmltoimage-binary'
 gem 'aws-sdk', '~> 2'
 
 group :development, :test do
-  gem 'rspec'
-  gem 'rack-test'
   gem 'pry-byebug'
   gem 'rubocop'
+end
+
+group :test do
+  gem 'rspec'
+  gem 'rack-test'
+  gem 'fakeredis', require: 'fakeredis/rspec'
 end
 
 group :development do

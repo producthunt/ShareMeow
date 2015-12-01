@@ -37,6 +37,8 @@ GEM
     diff-lcs (1.2.5)
     dotenv (2.0.2)
     erubis (2.7.0)
+    fakeredis (0.5.0)
+      redis (~> 3.0)
     gemoji (2.1.0)
     git-version-bump (0.15.1)
     i18n (0.7.0)
@@ -68,6 +70,12 @@ GEM
       rack (>= 1.0)
     rainbow (2.0.0)
     rake (10.4.2)
+    redis (3.2.2)
+    redis-sinatra (1.4.0)
+      redis-store (~> 1.1.0)
+      sinatra (~> 1.4.0)
+    redis-store (1.1.7)
+      redis (>= 2.2)
     rspec (3.4.0)
       rspec-core (~> 3.4.0)
       rspec-expectations (~> 3.4.0)
@@ -115,6 +123,7 @@ DEPENDENCIES
   bundler
   dotenv
   erubis
+  fakeredis
   gemoji
   i18n
   imgkit
@@ -125,6 +134,7 @@ DEPENDENCIES
   rack-standards
   rack-test
   rake
+  redis-sinatra
   rspec
   rubocop
   rumoji
