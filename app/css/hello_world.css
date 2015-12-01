@@ -1,0 +1,23 @@
+/* Example stylesheet */
+
+/* You can include a font from Google Fonts like this */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Regular'), local('Roboto-Regular'), url(https://themes.googleusercontent.com/static/fonts/roboto/v10/2UX7WLTfW3W8TclTUvlFyQ.woff) format('woff');
+}
+
+body {
+  font-size: 12px;
+  font-family: 'Roboto', sans-serif;
+  margin: 0px;
+  background-color: #3D6299;
+}
+
+.container {
+  width: 350px;
+  background-color: #FFFFFF;
+  padding: 5px;
+  margin: 10px;
+}
