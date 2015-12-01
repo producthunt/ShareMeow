@@ -1,7 +1,6 @@
 module ShareMeow
   module Routes
     class Base < Sinatra::Application
-      register ShareMeow::Authorization
       register Sinatra::Param
 
       configure do
@@ -19,12 +18,11 @@ module ShareMeow
         'ShareMeow 😻'
       end
 
-      get '/image' do
+      post '/image' do
         content_type :json
-        param :digest, String, required: true
-        param :payload, Hash, required: true
+        param :template, String, required: true
 
-        'hi'
+        { url: ShareMeow::Image.new(params).generate_and_store! }.to_json
       end
     end
   end
