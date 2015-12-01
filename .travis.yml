@@ -1,10 +1,17 @@
 sudo: false
 language: ruby
 rvm:
-  - 2.2.3
+- 2.2.3
 before_install: gem update --remote bundler
 install:
-  - bundle install --retry=3
+- bundle install --retry=3
 script:
-   - bundle exec rspec
-   - bundle exec rubocop --config .rubocop.yml
+- bundle exec rspec
+- bundle exec rubocop --config .rubocop.yml
+deploy:
+  provider: heroku
+  api_key:
+    secure: nc9NZr6jbYNw7rSHTyHPaVQ5vnY5NVRPUKYX8gUdi1ZMhbqLGV2u/UjCZUFdhmUoMBqh+x8VeJB8XNGmOI2r4eDue0GinCrMTkVJhxvoQDfXehws17tNsmWGQhuESN5Df/HEe+14nVi2C2z18N04pl6ZfyJPJ8kaCujEMZ62jD6RkX4Kg5FhRxfmRJc6x7gxbM+IrZPZWOvknse7eui3tiX0Hgvt6BJ+ajLLa2w0VCapXbsNMhBdbPBu3EtlyEOhWOVMJhP/QgUzm1lOZrEorj2HsR5NjUUN4vAumzfk2e85HV8su4U0h6xeozYy8p01IQb/Qob7EVQR/z1nRX55VBc5/sOFvNYbmSN0l9Qan9CEslTRCBrsZJ1l2NVMAeWWw2Chd+OGhKwCt29tgE9fNktcgO3jJTfozfZmFVHqj1sE5eVmijuDrHW0rUIOgLopyzdjISVHmcgQSq+VT/4CJE2bCsDAiJY3QA3NpnSxC7UFVB3JlasYiLQHRKngYuKGwILmlpo6Ee9rWEtqDjWk4sykRp5gj5L8qeVzBSuxTC0FDbZAGp01JNl1NjEGJk7HqH8Hxu3CN0TFoXI3KTxiku6BdZS3vazfdeKDrBDMUrKTqgoQ9oGdx5Ov1orS+XLUq46mqdog//lUUVepvDrQJcHY11O2xM901BxhZCrZfFM=
+  app: sharemeow
+  on:
+    repo: producthunt/ShareMeow
