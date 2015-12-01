@@ -12,6 +12,7 @@ Dotenv.load
 # Require base
 require 'sinatra/base'
 require 'sinatra/param'
+require 'redis-sinatra'
 
 require 'app/image_templates/base'
 
@@ -23,11 +24,12 @@ require 'app/image'
 module ShareMeow
   class App < Sinatra::Application
     register Sinatra::Initializers
+    register Sinatra::Cache
 
     configure do
       set :root, File.dirname(__FILE__)
 
-      if %i(development test).include? environment
+      if settings.development? || settings.test?
         set :base_url, 'http://localhost:3000'
       else
         set :base_url, ENV.fetch('BASE_URL')
