@@ -5,7 +5,8 @@ RSpec.describe EmojiHelper do
     it 'turns unicode into emoji' do
       content = described_class.emojify('My emoji content 😀')
 
-      expect(content).to eq "My emoji content <img alt=\"grinning\" src=\"#{ShareMeow::App.base_url}/images/emoji/unicode/1f600.png\" " \
+      expect(content).to eq "My emoji content <img alt=\"grinning\" " \
+                            "src=\"#{ShareMeow::App.base_url}/images/emoji/unicode/1f600.png\" " \
                             "style=\"vertical-align:middle\" width=\"20\" height=\"20\" />"
     end
 
