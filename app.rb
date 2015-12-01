@@ -38,6 +38,7 @@ module ShareMeow
       enable :static
     end
 
+    use Rack::SSL if environment == 'production'
     use Rack::Deflater
     use Rack::Standards
     use Rack::PostBodyContentTypeParser
