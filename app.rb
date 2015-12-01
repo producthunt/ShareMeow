@@ -16,7 +16,6 @@ require 'sinatra/param'
 Dir['lib/**/*.rb'].sort.each { |file| require file }
 Dir['app/image_templates/*.rb'].each { |file| require file }
 
-require 'app/authorization'
 require 'app/routes'
 require 'app/image'
 
