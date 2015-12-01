@@ -9,7 +9,7 @@ pass it some parameters, and it will generate an image to you.
 ## Deploy
 Info on how to deploy here.
 
-## Authenticaion
+## Authentication
 Info on security/authentication here
 
 ## Templates
@@ -28,7 +28,7 @@ Here is example css using a font from [Google Fonts](https://www.google.com/font
 ```
 
 #### Emoji :smile:
-If you'd like to render emoji, you can use the `EmojiHelper` in your templates. It converts emoji to images.
+If you'd like to render emoji, you can use the `EmojiHelper` in your templates. It converts both  unicode emoji and GitHub/Slack (`:smile:`) style emoji to images. Can do this by overriding `render_options`. 
 
 ```Ruby
 # images_templates/your_template.rb
@@ -36,8 +36,8 @@ require 'app/emoji_helper'
 
 module ImageTemplates
   class YourTemplate < Base
-    def initialize(options = {})
-      options[:content] = EmojiHelper.emojify(options[:content])
+    def render_options
+      @options[:content] = EmojiHelper.emojify(@options[:content])
       super
     end
   end
