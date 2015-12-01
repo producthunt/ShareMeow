@@ -2,9 +2,18 @@
 [![Build
 Status](https://travis-ci.org/producthunt/ShareMeow.svg?branch=master)](https://travis-ci.org/producthunt/ShareMeow)
 
-ShareMeow is a Ruby microservice for creating super shareable, tweetable,
+ShareMeow is a Ruby microservice (ooh ahh) for creating super shareable, tweetable,
 facebook-able images from your content :heart_eyes_cat:. You define a template (using HTML/CSS),
 pass it some parameters, and it will generate an image to you.
+
+It's what we use at [Product Hunt](https://www.producthunt.com) for making beautiful tweets like this:  
+*insert fancy tweet here*
+
+**Features:**
+- Supports Emoji :100::heart_eyes_cat::sparkles:
+- Images are stored on AWS S3
+- Caching via Redis
+- HTTP Basic authentication
 
 ## Deploy
 Info on how to deploy here.
@@ -27,7 +36,7 @@ Here is example css using a font from [Google Fonts](https://www.google.com/font
 }
 ```
 
-#### Emoji :smile:
+#### Emoji :sparkles:
 If you'd like to render emoji, you can use the `EmojiHelper` in your templates. It converts both  unicode emoji and GitHub/Slack (`:smile:`) style emoji to images. Can do this by overriding `render_options`. 
 
 ```Ruby
