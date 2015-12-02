@@ -7,9 +7,6 @@ module ShareMeow
         set :logging, true
         set :views, 'app/views'
 
-        disable :method_override
-        disable :protection
-
         enable :static
         enable :use_code
       end

@@ -1,6 +1,16 @@
 module ShareMeow
   module Routes
-    class Image < ShareMeow::Routes::Base
+    class Image < Sinatra::Application
+      register Sinatra::Param
+
+      configure do
+        set :logging, true
+
+        disable :method_override
+
+        enable :use_code
+      end
+
       use Rack::Auth::Basic, 'You need a password to do this' do |username, password|
         username == ENV.fetch('AUTH_USERNAME') && password == ENV.fetch('AUTH_PASSWORD')
       end
