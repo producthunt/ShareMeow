@@ -43,12 +43,12 @@ module ImageTemplates
     #
     # @api public
     def cache_key
-      return @cache_key unless @cache_key.nil?
+      return @cache_key if @cache_key
 
       digest = Digest::SHA1.new
 
       digest.file(File.expand_path(__FILE__))
-      digest.file(self.method(:allowed_options).source_location.first)
+      digest.file(method(:allowed_options).source_location.first)
       digest.file(erb_template)
       digest.file(css_stylesheet)
 
