@@ -1,3 +1,5 @@
+require 'app/basic_auth'
+
 module ShareMeow
   module Routes
     class Image < Sinatra::Application
@@ -11,7 +13,7 @@ module ShareMeow
         enable :use_code
       end
 
-      use Rack::Auth::Basic, 'You need a password to do this' do |username, password|
+      use BasicAuth, 'You need a password to do this' do |username, password|
         username == ENV.fetch('AUTH_USERNAME') && password == ENV.fetch('AUTH_PASSWORD')
       end
 
