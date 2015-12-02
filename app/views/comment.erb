@@ -5,23 +5,12 @@
   </head>
   <body>
     <div class="comment">
-      <!-- <div class="comment&#45;&#45;header"> -->
-      <!--   <!&#45;&#45; <div class="comment&#38;#45;&#38;#45;header&#38;#45;&#38;#45;vote&#38;#45;button"> &#45;&#45;> -->
-      <!--   <!&#45;&#45;   <span class="comment&#38;#45;&#38;#45;header&#38;#45;&#38;#45;vote&#38;#45;arrow"> &#45;&#45;> -->
-      <!--   <!&#45;&#45;     <svg width="9" height="8" viewBox="0 0 9 8" xmlns="http://www.w3.org/2000/svg"><path d="M9 8H0l4.5&#38;#45;8L9 8z" fill="#000" fill&#38;#45;rule="evenodd"></path></svg> &#45;&#45;> -->
-      <!--   <!&#45;&#45;   </span> &#45;&#45;> -->
-      <!--   <!&#45;&#45;   <span class="comment&#38;#45;&#38;#45;header&#38;#45;&#38;#45;vote&#38;#45;count"> &#45;&#45;> -->
-      <!--   <!&#45;&#45;     123 &#45;&#45;> -->
-      <!--   <!&#45;&#45;   </span> &#45;&#45;> -->
-      <!--   <!&#45;&#45; </div> &#45;&#45;> -->
-      <!--   <div class="comment&#45;&#45;header&#45;&#45;post&#45;title"> -->
-      <!--     <h2>Square Contactless Reader</h2> -->
-      <!--     <p class="subtext">Accept Apple Pay + Chip cards, anywhere</p> -->
-      <!--   </div> -->
-      <!-- </div> -->
-        <!-- <div class="comment&#45;&#45;header&#45;&#45;logo"> -->
-        <!--   <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill&#45;rule="evenodd"><path d="M40 20c0 11.046&#45;8.954 20&#45;20 20S0 31.046 0 20 8.954 0 20 0s20 8.954 20 20" fill="#DA552F"></path><path d="M22.667 20H17v&#45;6h5.667c1.656 0 3 1.343 3 3s&#45;1.344 3&#45;3 3m0&#45;10H13v20h4v&#45;6h5.667c3.866 0 7&#45;3.134 7&#45;7s&#45;3.134&#45;7&#45;7&#45;7" fill="#FFF"></path></g></svg> -->
-        <!-- </div> -->
+      <div class="comment--header">
+        <div class="comment--header--post-title">
+          <h2><%= options[:product_name] %></h2>
+          <p class="subtext"><%= options[:product_tagline] %></p>
+        </div>
+      </div>
       <div class="comment--content">
         <p>
           <%= options[:content] %>
@@ -30,7 +19,7 @@
       <div class="comment--footer">
         <div class="comment--footer--user">
           <div class="comment--footer--avatar">
-            <img width=20 height=20 src="http://ph-avatars.imgix.net/1/original?auto=format&crop=fit&crop=faces&w=40&h=40" />
+            <img width=20 height=20 src="<%= options[:avatar_url] %>" />
           </div>
           <div class="comment--footer--name">
             <%= options[:name] %> <span class="subtext">- <%= options[:tagline] %></span>

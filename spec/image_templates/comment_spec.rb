@@ -2,9 +2,12 @@ require 'spec_helper'
 require 'image_templates/shared_examples'
 
 RSpec.describe ImageTemplates::Comment do
-  default_options = { 'name' => 'William Shakespurr',
+  default_options = { 'avatar_url' => 'https://ph-avatars.imgix.net/787/original?w=80&h=80',
+                      'name' => 'William Shakespurr',
                       'tagline' => 'Official Spokescat of ProductHunt Books',
-                      'content' => 'Meow' }
+                      'content' => 'Meow',
+                      'product_name' => 'Product Hunt Podcasts',
+                      'product_tagline' => 'The best new podcasts, every day' }
 
   let(:image_template) { described_class.new(default_options) }
 
@@ -15,6 +18,14 @@ RSpec.describe ImageTemplates::Comment do
 
     it 'renders the tagline' do
       expect(image_template.to_html).to include default_options['tagline']
+    end
+
+    it 'renders the product name' do
+      expect(image_template.to_html).to include default_options['product_name']
+    end
+
+    it 'renders the product tagline' do
+      expect(image_template.to_html).to include default_options['product_tagline']
     end
 
     it 'renders the comment contents' do

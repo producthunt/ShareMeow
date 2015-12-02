@@ -30,12 +30,11 @@
 }
 
 body {
-  font-size: 18px;
-  width: 405px;
-  margin: 0px;
+  background-color: #5898f1;
   font-family: 'Roboto';
+  font-size: 18px;
   font-weight: 300;
-  background-color: #FFFFFF;
+  margin: 0px;
 }
 
 a {
