@@ -1,8 +1,6 @@
 module ShareMeow
   module Routes
     class Base < Sinatra::Application
-      register Sinatra::Param
-
       configure do
         set :logging, true
         set :views, 'app/views'
