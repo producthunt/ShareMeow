@@ -23,7 +23,7 @@ It's what we use at [Product Hunt](https://www.producthunt.com) for making beaut
 Info on how to deploy here.
 
 ## Authentication
-Info on security/authentication here
+Image generation is protected by HTTP basic auth. Username and password are set by environment variables. `AUTH_USERNAME` and `AUTH_PASSWORD`. These are needed for the `POST /image` endpoint.
 
 ## Caching
 Generating images can take anywhere from 500ms to 2000ms depending on the complexity. Once created, ShareMeow caches the S3 url in Redis so that it does not needlessly generate the same image again.
