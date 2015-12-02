@@ -52,7 +52,7 @@ module ImageTemplates
       digest.file(erb_template)
       digest.file(css_stylesheet)
 
-      @cache_key = "#{template_name}/#{digest.hexdigest(@options.to_json)}"
+      @cache_key = "#{template_name}/#{digest.hexdigest}/#{digest.hexdigest(@options.to_json)}"
     end
 
     ##
