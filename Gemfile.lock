@@ -31,10 +31,13 @@ GEM
     byebug (2.7.0)
       columnize (~> 0.3)
       debugger-linecache (~> 1.2)
+    codeclimate-test-reporter (0.4.8)
+      simplecov (>= 0.7.1, < 1.0.0)
     coderay (1.1.0)
     columnize (0.9.0)
     debugger-linecache (1.2.0)
     diff-lcs (1.2.5)
+    docile (1.1.5)
     dotenv (2.0.2)
     erubis (2.7.0)
     gemoji (2.1.0)
@@ -96,6 +99,11 @@ GEM
       tins (<= 1.6.0)
     ruby-progressbar (1.7.5)
     rumoji (0.4.1)
+    simplecov (0.11.0)
+      docile (~> 1.1.0)
+      json (~> 1.8)
+      simplecov-html (~> 0.10.0)
+    simplecov-html (0.10.0)
     sinatra (1.4.6)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -119,6 +127,7 @@ DEPENDENCIES
   aws-sdk (~> 2)
   builder
   bundler
+  codeclimate-test-reporter
   dotenv
   erubis
   gemoji

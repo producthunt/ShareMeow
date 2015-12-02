@@ -1,3 +1,6 @@
+require 'codeclimate-test-reporter'
+CodeClimate::TestReporter.start
+
 ENV['RACK_ENV'] = 'test'
 ENV['AWS_BUCKET_NAME'] = 'sharemeow'
 
