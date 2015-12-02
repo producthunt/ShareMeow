@@ -1,7 +1,7 @@
 module ShareMeow
   module Routes
     class Image < ShareMeow::Routes::Base
-      use Rack::Auth::Basic, "You need a password to do this" do |username, password|
+      use Rack::Auth::Basic, 'You need a password to do this' do |username, password|
         username == ENV.fetch('AUTH_USERNAME') && password == ENV.fetch('AUTH_PASSWORD')
       end
 

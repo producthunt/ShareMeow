@@ -15,7 +15,7 @@ RSpec.describe ShareMeow::App do
       instance_double(ShareMeow::Image, generate_and_store!: 'https://example.com/fake.jpg')
     end
 
-    let(:basic_auth) { "Basic #{Base64::encode64('sharemeow:very_secure')}" }
+    let(:basic_auth) { "Basic #{Base64.encode64('sharemeow:very_secure')}" }
 
     it 'returns a 401 without username/password' do
       post '/image'
@@ -24,8 +24,7 @@ RSpec.describe ShareMeow::App do
     end
 
     it 'returns a 401 with wrong credentials' do
-      post '/image', 'HTTP_AUTHORIZATION' => "Basic #{Base64::encode64('thisiswrong:sowrong')}"
-
+      post '/image', 'HTTP_AUTHORIZATION' => "Basic #{Base64.encode64('thisiswrong:sowrong')}"
 
       expect(last_response.status).to eq 401
     end
@@ -34,7 +33,7 @@ RSpec.describe ShareMeow::App do
       allow(ShareMeow::Image).to receive(:new).and_return image_double
 
       post '/image', { template: 'HelloWorld', message: 'Hello, World' },
-        'HTTP_AUTHORIZATION' => basic_auth
+           'HTTP_AUTHORIZATION' => basic_auth
 
       expect(ShareMeow::Image).to have_received(:new).with('template' => 'HelloWorld', 'message' => 'Hello, World')
     end
