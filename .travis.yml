@@ -5,6 +5,8 @@ rvm:
 before_install: gem update --remote bundler
 install:
 - bundle install --retry=3
+services:
+  - redis-server
 script:
 - bundle exec rspec
 - bundle exec rubocop --config .rubocop.yml
