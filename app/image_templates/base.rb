@@ -48,7 +48,7 @@ module ImageTemplates
       digest = Digest::SHA1.new
 
       digest.file(File.expand_path(__FILE__))
-      digest.file(method(:allowed_options).source_location.first)
+      digest.file(current_file_location)
       digest.file(erb_template)
       digest.file(css_stylesheet)
 
@@ -87,6 +87,10 @@ module ImageTemplates
 
     def css_stylesheet
       'app/css/default.css'
+    end
+
+    def current_file_location
+      method(:allowed_options).source_location.first
     end
   end
 end
