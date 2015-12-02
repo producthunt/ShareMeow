@@ -30,7 +30,6 @@ end
 group :test do
   gem 'rspec'
   gem 'rack-test'
-  gem 'fakeredis', require: 'fakeredis/rspec'
 end
 
 group :development do
