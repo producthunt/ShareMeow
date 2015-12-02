@@ -25,6 +25,23 @@ Info on how to deploy here.
 ## Authentication
 Info on security/authentication here
 
+## Caching
+Generating images can take anywhere from 500ms to 2000ms depending on the complexity. Once created, ShareMeow caches the S3 url in Redis so that it does not needlessly generate the same image again.
+
+It's recommended to set your redis Maxmemory-policy to `allkeys-lru`. When Redis runs out of memory, it will automatically delete the least used keys to make room for new keys.
+
+If using Heroku Redis, this can be enabled by running the following:
+
+```Bash
+heroku plugins:install heroku-redis
+heroku redis:maxmemory --policy allkeys-lru
+```
+
+More info here: [Heroku Redis: Maxmemory-policy](https://devcenter.heroku.com/articles/heroku-redis#maxmemory-policy)
+
+**Cache Keys:**   
+Image cache keys contain a digest of all files used to create the image. This means if you update your stylesheet, erb or template.rb files, the cache keys will update as well. You do not need to worry about clearing caches when making changes.
+
 ## Templates
 Info on how to create a new template here. :smile:
 
