@@ -17,14 +17,47 @@ RSpec.shared_examples 'an ImageTemplate' do |options|
     end
   end
 
+  describe '#template_name' do
+    it 'returns the template name' do
+      expect(image_template.template_name).to eq described_class.name.demodulize.downcase
+    end
+  end
+
+  describe '#cache_key' do
+    it 'includes template name' do
+      expect(image_template.cache_key).to start_with("#{image_template.template_name}/")
+    end
+
+    it 'changes with different options' do
+      cache_key = described_class.new(options).cache_key
+
+      options[options.first[0]] = 'Changing value to something else'
+      other_key = described_class.new(options).cache_key
+
+      expect(cache_key).to_not eq other_key
+    end
+
+    it 'includes the image template files in the key' do
+      digest_double = instance_double(Digest::SHA1, file: true, hexdigest: 'fake')
+
+      allow(Digest::SHA1).to receive(:new).and_return digest_double
+      allow(digest_double).to receive(:file).and_return true
+
+      image_template.cache_key
+
+      expect(digest_double).to have_received(:file).with(image_template.erb_template)
+      expect(digest_double).to have_received(:file).with(image_template.css_stylesheet)
+      expect(digest_double).to have_received(:file).with(image_template.method(:allowed_options).source_location.first)
+    end
+  end
+
   describe '#filename' do
     it 'return a jpg filename' do
       expect(image_template.filename).to end_with('.jpg')
     end
 
     it 'includes template name' do
-      template_name = described_class.name.demodulize.downcase
-      expect(image_template.filename).to start_with("#{template_name}/")
+      expect(image_template.filename).to start_with("#{image_template.template_name}/")
     end
   end
 
