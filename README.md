@@ -1,12 +1,16 @@
 ## ShareMeow
 [![Build
 Status](https://travis-ci.org/producthunt/ShareMeow.svg?branch=master)](https://travis-ci.org/producthunt/ShareMeow)
+[![Code
+Climate](https://codeclimate.com/github/producthunt/ShareMeow/badges/gpa.svg)](https://codeclimate.com/github/producthunt/ShareMeow)
+[![Test
+Coverage](https://codeclimate.com/github/producthunt/ShareMeow/badges/coverage.svg)](https://codeclimate.com/github/producthunt/ShareMeow/coverage)
 
 ShareMeow is a Ruby microservice (ooh ahh) for creating super shareable, tweetable,
 facebook-able images from your content :heart_eyes_cat:. You define a template (using HTML/CSS),
 pass it some parameters, and it will generate an image to you.
 
-It's what we use at [Product Hunt](https://www.producthunt.com) for making beautiful tweets like this:  
+It's what we use at [Product Hunt](https://www.producthunt.com) for making beautiful tweets like this:
 *insert fancy tweet here*
 
 **Features:**
@@ -37,7 +41,7 @@ Here is example css using a font from [Google Fonts](https://www.google.com/font
 ```
 
 #### Emoji :sparkles:
-If you'd like to render emoji, you can use the `EmojiHelper` in your templates. It converts both  unicode emoji and GitHub/Slack (`:smile:`) style emoji to images. Can do this by overriding `render_options`. 
+If you'd like to render emoji, you can use the `EmojiHelper` in your templates. It converts both  unicode emoji and GitHub/Slack (`:smile:`) style emoji to images. Can do this by overriding `render_options`.
 
 ```Ruby
 # images_templates/your_template.rb
