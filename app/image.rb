@@ -13,7 +13,9 @@ module ShareMeow
     end
 
     def generate_and_store!
-      ShareMeow::StoreImage.new(template.filename, generate_jpg).store!
+      ShareMeow::App.cache.fetch(template.cache_key) do
+        ShareMeow::StoreImage.new(template.filename, generate_jpg).store!
+      end
     end
 
     private
