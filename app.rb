@@ -18,7 +18,8 @@ require 'app/image_templates/base'
 
 Dir['app/image_templates/*.rb'].each { |file| require file }
 
-require 'app/routes'
+require 'app/routes/base'
+require 'app/routes/image'
 require 'app/image'
 
 module ShareMeow
@@ -48,5 +49,6 @@ module ShareMeow
 
     # Routes
     use Routes::Base
+    use Routes::Image
   end
 end

@@ -17,13 +17,6 @@ module ShareMeow
       get '/' do
         'ShareMeow 😻'
       end
-
-      post '/image' do
-        content_type :json
-        param :template, String, required: true
-
-        { url: ShareMeow::Image.new(params).generate_and_store! }.to_json
-      end
     end
   end
 end

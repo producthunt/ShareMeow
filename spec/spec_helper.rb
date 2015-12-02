@@ -3,6 +3,8 @@ CodeClimate::TestReporter.start
 
 ENV['RACK_ENV'] = 'test'
 ENV['AWS_BUCKET_NAME'] = 'sharemeow'
+ENV['AUTH_USERNAME'] = 'sharemeow'
+ENV['AUTH_PASSWORD'] = 'very_secure'
 
 require File.expand_path('../../app', __FILE__)
 
