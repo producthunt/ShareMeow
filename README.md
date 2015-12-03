@@ -11,7 +11,8 @@ facebook-able images from your content :heart_eyes_cat:. You define a template (
 pass it some parameters, and it will generate an image to you.
 
 It's what we use at [Product Hunt](https://www.producthunt.com) for making beautiful tweets like this:
-*insert fancy tweet here*
+
+![ShareMeow Preview Image](https://sharemeow.s3.amazonaws.com/comment/144917546133c3b0bc.jpg)
 
 **Features:**
 - Supports Emoji :100::heart_eyes_cat::sparkles:
