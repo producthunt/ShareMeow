@@ -12,7 +12,7 @@ pass it some parameters, and it will generate an image to you.
 
 It's what we use at [Product Hunt](https://www.producthunt.com) for making beautiful tweets like this:
 
-![ShareMeow Preview Image](https://pbs.twimg.com/media/CVVDEEOVAAAd9j6.jpg)
+<img width='375px' src="https://camo.githubusercontent.com/5bed0906f5c6bd07c843246f0baccd0e8fe03b2b/68747470733a2f2f7062732e7477696d672e636f6d2f6d656469612f4356564445454f5641414164396a362e6a7067" alt="ShareMeow Preview Image" data-canonical-src="https://pbs.twimg.com/media/CVVDEEOVAAAd9j6.jpg" style="max-width:100%;">
 
 **Features:**
 - Supports Emoji :100::heart_eyes_cat::sparkles:
