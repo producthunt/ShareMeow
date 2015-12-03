@@ -13,7 +13,7 @@ RSpec.describe ShareMeow::App do
       allow(ShareMeow::Image).to receive(:new).and_return image_double
 
       get '/image', { template: 'HelloWorld', message: 'Hello, World' },
-           'HTTP_AUTHORIZATION' => basic_auth
+          'HTTP_AUTHORIZATION' => basic_auth
 
       expect(JSON.parse(last_response.body)['url']).to eq 'https://example.com/fake.jpg'
     end
@@ -34,7 +34,7 @@ RSpec.describe ShareMeow::App do
       allow(ShareMeow::Image).to receive(:new).and_return image_double
 
       get '/image', { template: 'HelloWorld', message: 'Hello, World' },
-           'HTTP_AUTHORIZATION' => basic_auth
+          'HTTP_AUTHORIZATION' => basic_auth
 
       expect(ShareMeow::Image).to have_received(:new).with('template' => 'HelloWorld', 'message' => 'Hello, World')
     end
@@ -56,7 +56,7 @@ RSpec.describe ShareMeow::App do
       allow(image_double).to receive(:to_jpg)
 
       get '/image/inline', { template: 'HelloWorld', message: 'Hello, World' },
-           'HTTP_AUTHORIZATION' => basic_auth
+          'HTTP_AUTHORIZATION' => basic_auth
 
       expect(ShareMeow::Image).to have_received(:new).with('template' => 'HelloWorld', 'message' => 'Hello, World')
       expect(image_double).to have_received(:to_jpg)
