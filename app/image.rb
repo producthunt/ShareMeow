@@ -14,23 +14,23 @@ module ShareMeow
 
     def generate_and_store!
       ShareMeow::App.cache.fetch(template.cache_key) do
-        ShareMeow::StoreImage.new(template.filename, generate_jpg).store!
+        ShareMeow::StoreImage.new(template.filename, to_jpg).store!
       end
     end
 
-    private
-
-    def s3_object
-      @s3_object ||= Aws::S3::Resource.new.bucket('sharemeow').object(template.filename)
-    end
-
-    def generate_jpg
+    def to_jpg
       options = DEFAULT_OPTIONS.merge(width: template.image_width, quality: template.image_quality)
 
       image_kit = IMGKit.new(template.to_html, options)
       image_kit.stylesheets << template.css_stylesheet
 
       image_kit.to_img(:jpg)
+    end
+
+    private
+
+    def s3_object
+      @s3_object ||= Aws::S3::Resource.new.bucket('sharemeow').object(template.filename)
     end
 
     def template_klass(template_name)

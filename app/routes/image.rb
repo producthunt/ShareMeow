@@ -17,11 +17,18 @@ module ShareMeow
         username == ENV.fetch('AUTH_USERNAME') && password == ENV.fetch('AUTH_PASSWORD')
       end
 
-      post '/image' do
+      get '/image' do
         content_type :json
         param :template, String, required: true
 
         { url: ShareMeow::Image.new(params).generate_and_store! }.to_json
+      end
+
+      get '/image/inline' do
+        content_type :jpeg
+        param :template, String, required: true
+
+        ShareMeow::Image.new(params).to_jpg
       end
     end
   end
