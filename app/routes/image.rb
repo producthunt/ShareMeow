@@ -13,8 +13,10 @@ module ShareMeow
         enable :use_code
       end
 
-      use BasicAuth, 'You need a password to do this' do |username, password|
-        username == ENV.fetch('AUTH_USERNAME') && password == ENV.fetch('AUTH_PASSWORD')
+      unless ENV['AUTH_ENABLED'] == 'false'
+        use BasicAuth, 'You need a password to do this' do |username, password|
+          username == ENV.fetch('AUTH_USERNAME') && password == ENV.fetch('AUTH_PASSWORD')
+        end
       end
 
       get '/image' do
