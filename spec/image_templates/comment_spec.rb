@@ -4,10 +4,8 @@ require 'image_templates/shared_examples'
 RSpec.describe ImageTemplates::Comment do
   default_options = { 'avatar_url' => 'https://ph-avatars.imgix.net/787/original?w=80&h=80',
                       'name' => 'William Shakespurr',
-                      'tagline' => 'Official Spokescat of ProductHunt Books',
                       'content' => 'Meow',
-                      'product_name' => 'Product Hunt Podcasts',
-                      'product_tagline' => 'The best new podcasts, every day' }
+                      'subject_name' => 'Product Hunt Podcasts' }
 
   let(:image_template) { described_class.new(default_options) }
 
@@ -16,8 +14,8 @@ RSpec.describe ImageTemplates::Comment do
       expect(image_template.to_html).to include default_options['name']
     end
 
-    it 'renders the product name' do
-      expect(image_template.to_html).to include default_options['product_name']
+    it 'renders the subject name' do
+      expect(image_template.to_html).to include default_options['subject_name']
     end
 
     it 'renders the comment contents' do
@@ -26,13 +24,13 @@ RSpec.describe ImageTemplates::Comment do
   end
 
   describe '#render_options' do
-    it 'emojifies the name, tagline & content' do
+    it 'emojifies the name, subject_name & content' do
       allow(EmojiHelper).to receive(:emojify).and_call_original
 
       image_template.render_options
 
       expect(EmojiHelper).to have_received(:emojify).with(default_options['name'])
-      expect(EmojiHelper).to have_received(:emojify).with(":speech_balloon: on #{default_options['product_name']}")
+      expect(EmojiHelper).to have_received(:emojify).with(":speech_balloon: on #{default_options['subject_name']}")
       expect(EmojiHelper).to have_received(:emojify).with(default_options['content'])
     end
   end

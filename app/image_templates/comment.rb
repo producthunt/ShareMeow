@@ -4,14 +4,14 @@ module ImageTemplates
   class Comment < Base
     def render_options
       @options[:name] = EmojiHelper.emojify(@options[:name])
-      @options[:product_name] = EmojiHelper.emojify(":speech_balloon: on #{@options[:product_name]}")
+      @options[:subject_name] = EmojiHelper.emojify(":speech_balloon: on #{@options[:subject_name]}")
       @options[:content] = EmojiHelper.emojify(@options[:content])
 
       super
     end
 
     def allowed_options
-      %w(content name tagline avatar_url product_name product_tagline)
+      %w(content name avatar_url subject_name)
     end
 
     def erb_template
