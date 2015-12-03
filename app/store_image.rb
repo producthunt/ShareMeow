@@ -10,7 +10,7 @@ module ShareMeow
     end
 
     def store!
-      s3_object.put(body: image_binary_data)
+      s3_object.put(body: image_binary_data, content_type: 'image/jpeg'.freeze)
       s3_object.public_url
     end
 
