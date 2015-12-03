@@ -51,7 +51,7 @@ Request:
 curl -X GET -H "Authorization: Basic c2hhcmVtZW93OnZlcnlfc2VjdXJl" 'http://localhost:3000/image/inline?template=HelloWorld&message=Hi!'
 ```
 
-Response:  
+Response:
 ** todo **
 
 ## Deploy
@@ -59,6 +59,8 @@ Info on how to deploy here.
 
 ## Authentication
 Image generation is protected by HTTP basic auth. Username and password are set by environment variables. `AUTH_USERNAME` and `AUTH_PASSWORD`. These are needed for the `POST /image` endpoint.
+
+Authentication may be disabled by setting `AUTH_ENABLED` to `false`.
 
 ## Caching
 Generating images can take anywhere from 500ms to 2000ms depending on the complexity. Once created, ShareMeow caches the S3 url in Redis so that it does not needlessly generate the same image again.
@@ -74,7 +76,7 @@ heroku redis:maxmemory --policy allkeys-lru
 
 More info here: [Heroku Redis: Maxmemory-policy](https://devcenter.heroku.com/articles/heroku-redis#maxmemory-policy)
 
-**Cache Keys:**   
+**Cache Keys:**
 Image cache keys contain a digest of all files used to create the image. This means if you update your stylesheet, erb or template.rb files, the cache keys will update as well. You do not need to worry about clearing caches when making changes.
 
 ## Templates
