@@ -19,6 +19,41 @@ It's what we use at [Product Hunt](https://www.producthunt.com) for making beaut
 - Caching via Redis
 - HTTP Basic authentication
 
+## The API
+There are two endpoints. `/image` and `/image/inline`
+
+Both are protected by HTTP Basic authentication
+
+#### GET `/image`
+This generates an image, stores it on S3 and returns the URL. Caching is enabled on this endpoint.
+
+Required params: `template` + whichever params are required by your template. In this example we're using the HelloWorld template, it requires `message`.
+
+Request:
+```bash
+curl -X GET -H "Authorization: Basic c2hhcmVtZW93OnZlcnlfc2VjdXJl" 'http://localhost:3000/image?template=HelloWorld&message=Hi!'
+```
+
+Response:
+```json
+{
+  "url": "https://sharemeow.s3.amazonaws.com/helloworld/1449102083741bdaa0.jpg"
+}
+```
+
+#### GET `/image/inline`
+This generates an image and returns it. The image is not stored & there is no caching.
+
+Required params: `template` + whichever params are required by your template. In this example we're using the HelloWorld template, it requires `message`.
+
+Request:
+```bash
+curl -X GET -H "Authorization: Basic c2hhcmVtZW93OnZlcnlfc2VjdXJl" 'http://localhost:3000/image/inline?template=HelloWorld&message=Hi!'
+```
+
+Response:  
+** todo **
+
 ## Deploy
 Info on how to deploy here.
 
