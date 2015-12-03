@@ -4,9 +4,7 @@ module ImageTemplates
   class Comment < Base
     def render_options
       @options[:name] = EmojiHelper.emojify(@options[:name])
-      @options[:tagline] = EmojiHelper.emojify(@options[:tagline])
-      @options[:product_name] = EmojiHelper.emojify(@options[:product_name])
-      @options[:product_tagline] = EmojiHelper.emojify(@options[:product_tagline])
+      @options[:product_name] = EmojiHelper.emojify(":speech_balloon: on #{@options[:product_name]}")
       @options[:content] = EmojiHelper.emojify(@options[:content])
 
       super

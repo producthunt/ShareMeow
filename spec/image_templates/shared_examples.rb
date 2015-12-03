@@ -12,7 +12,7 @@ RSpec.shared_examples 'an ImageTemplate' do |options|
       render_options = image_template.render_options
 
       options.each do |key, value|
-        expect(render_options.options[key.to_sym]).to eq value
+        expect(render_options.options[key.to_sym]).to_not be_nil
       end
     end
   end

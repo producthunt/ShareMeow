@@ -16,16 +16,8 @@ RSpec.describe ImageTemplates::Comment do
       expect(image_template.to_html).to include default_options['name']
     end
 
-    it 'renders the tagline' do
-      expect(image_template.to_html).to include default_options['tagline']
-    end
-
     it 'renders the product name' do
       expect(image_template.to_html).to include default_options['product_name']
-    end
-
-    it 'renders the product tagline' do
-      expect(image_template.to_html).to include default_options['product_tagline']
     end
 
     it 'renders the comment contents' do
@@ -40,7 +32,7 @@ RSpec.describe ImageTemplates::Comment do
       image_template.render_options
 
       expect(EmojiHelper).to have_received(:emojify).with(default_options['name'])
-      expect(EmojiHelper).to have_received(:emojify).with(default_options['tagline'])
+      expect(EmojiHelper).to have_received(:emojify).with(":speech_balloon: on #{default_options['product_name']}")
       expect(EmojiHelper).to have_received(:emojify).with(default_options['content'])
     end
   end
