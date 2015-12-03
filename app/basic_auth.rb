@@ -1,11 +1,11 @@
 class BasicAuth < Rack::Auth::Basic
-  PROTECTED_PATHS = ['/images']
+  PROTECTED_PATHS = ['/image', '/image/inline']
 
   def call(env)
     request = Rack::Request.new(env)
 
     return super if PROTECTED_PATHS.include? request.path
 
-    @app.call(env)  # skip auth
+    @app.call(env)
   end
 end
