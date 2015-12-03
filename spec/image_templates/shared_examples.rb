@@ -11,7 +11,7 @@ RSpec.shared_examples 'an ImageTemplate' do |options|
     it 'returns an object containing the options needed by the erb template' do
       render_options = image_template.render_options
 
-      options.each do |key, value|
+      options.each do |key, _value|
         expect(render_options.options[key.to_sym]).to_not be_nil
       end
     end
