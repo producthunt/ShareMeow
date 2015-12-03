@@ -19,13 +19,18 @@ RSpec.describe ShareMeow::App do
     end
 
     it 'returns a 401 without username/password' do
-      allow(ENV).to receive(:[]).with('AUTH_ENABLED').and_return 'false'
       get '/image', template: 'HelloWorld', message: 'Hello, World'
 
-      expect(last_response.status).to eq 200
+      expect(last_response.status).to eq 401
     end
 
     it 'does not require AUTH if env var is set' do
+      pending 'app needs to restart with this config to work'
+      allow(ENV).to receive(:[]).with('AUTH_ENABLED').and_return 'false'
+
+      get '/image', template: 'HelloWorld', message: 'Hello, World'
+
+      expect(last_response.status).to eq 200
     end
 
     it 'returns a 401 with wrong credentials' do
