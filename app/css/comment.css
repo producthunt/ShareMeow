@@ -44,8 +44,8 @@ a {
 }
 
 .comment {
-  width: 375px;
-  padding: 5px;
+  width: 400px;
+  padding: 10px;
   background-color: #ffffff;
 }
 
@@ -80,11 +80,13 @@ a {
 }
 
 .comment--header--logo {
+  margin-top: 5px;
+  margin-right: 5px;
   float: right;
 }
 
 .highlight {
-  background-color: #da552f;;
+  background-color: #EF7F5F;
 }
 
 .comment--content {
@@ -99,8 +101,9 @@ a {
 .comment--header--avatar {
   float: left;
   display: inline-block;
-  margin-right: 5px;
   margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
   vertical-align: middle;
 }
 
@@ -126,6 +129,6 @@ h2 {
 .comment--header--post-title {
   font-size: 16px;
   display: inline-block;
-  padding-top: 5px;
+  margin-top: 5px;
   margin-left: 5px;
 }
