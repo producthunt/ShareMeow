@@ -134,6 +134,7 @@ DEPENDENCIES
   i18n
   imgkit
   json
+  pry
   pry-byebug
   puma
   rack-contrib

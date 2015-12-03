@@ -21,6 +21,7 @@ gem 'rumoji'
 gem 'gemoji'
 gem 'wkhtmltoimage-binary'
 gem 'aws-sdk', '~> 2'
+gem 'pry', group: :production
 
 group :development, :test do
   gem 'pry-byebug'
