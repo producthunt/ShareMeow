@@ -40,7 +40,8 @@ todo
 
 
 ## Deploy
-Info on how to deploy here.
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/producthunt/ShareMeow)
+
 
 ## Authentication :closed_lock_with_key:
 ShareMeow uses URLs signed with an HMAC signature to ensure that only people with a secret key are able to generate URLs with your service.
