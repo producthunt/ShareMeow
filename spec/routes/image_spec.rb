@@ -19,26 +19,26 @@ RSpec.describe ShareMeow::App do
     end
 
     it 'renders the image and returns a jpg' do
-      get "/#{encoded_params}/#{hmac_digest}/image.jpg"
+      get "/v1/#{encoded_params}/#{hmac_digest}/image.jpg"
 
       expect(last_response.body).to eq 'fake-image'
       expect(last_response.content_type).to eq 'image/jpeg'
     end
 
     it 'returns a 401 with invalid hmac digest' do
-      get "/#{encoded_params}/thisiswrong/image.jpg"
+      get "/v1/#{encoded_params}/thisiswrong/image.jpg"
 
       expect(last_response.status).to eq 401
     end
 
     it 'returns a 401 if different params are sent' do
-      get "/thisiswrong/#{hmac_digest}/image.jpg"
+      get "/v1/thisiswrong/#{hmac_digest}/image.jpg"
 
       expect(last_response.status).to eq 401
     end
 
     it 'passes all params on to Image' do
-      get "/#{encoded_params}/#{hmac_digest}/image.jpg"
+      get "/v1/#{encoded_params}/#{hmac_digest}/image.jpg"
 
       expect(ShareMeow::Image).to have_received(:new).with('template' => 'HelloWorld', 'message' => 'Hello, World')
     end

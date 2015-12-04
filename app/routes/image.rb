@@ -19,7 +19,7 @@ module ShareMeow
         { url: ShareMeow::Image.new(params).generate_and_store! }.to_json
       end
 
-      get '/:encoded_params/:hmac_digest/image.jpg' do
+      get '/v1/:encoded_params/:hmac_digest/image.jpg' do
         content_type :jpeg
 
         unless authorized?(encoded_params: params[:encoded_params], hmac_digest: params[:hmac_digest])
