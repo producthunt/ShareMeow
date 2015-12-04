@@ -11,11 +11,10 @@ Dotenv.load
 
 # Require base
 require 'sinatra/base'
-require 'sinatra/param'
-require 'redis-sinatra'
+require 'base64'
+require 'openssl'
 
 require 'app/image_templates/base'
-
 Dir['app/image_templates/*.rb'].each { |file| require file }
 
 require 'app/routes/base'
@@ -25,7 +24,6 @@ require 'app/image'
 module ShareMeow
   class App < Sinatra::Application
     register Sinatra::Initializers
-    register Sinatra::Cache
 
     configure do
       set :root, File.dirname(__FILE__)
@@ -42,10 +40,7 @@ module ShareMeow
     end
 
     use Rack::SSL if environment == 'production'
-    use Rack::Deflater
     use Rack::Standards
-    use Rack::PostBodyContentTypeParser
-    use Rack::NestedParams
 
     # Routes
     use Routes::Base

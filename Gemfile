@@ -3,12 +3,10 @@ ruby '2.2.3'
 
 gem 'sinatra', require: 'sinatra/base'
 gem 'sinatra-contrib', github: 'maccman/sinatra-contrib'
-gem 'sinatra-param', require: 'sinatra/param'
 gem 'sinatra-initializers'
 gem 'activesupport', require: false
 gem 'rack-standards'
 gem 'rack-contrib'
-gem 'redis-sinatra'
 gem 'puma'
 gem 'erubis'
 gem 'i18n'
@@ -20,7 +18,6 @@ gem 'imgkit'
 gem 'rumoji'
 gem 'gemoji'
 gem 'wkhtmltoimage-binary'
-gem 'aws-sdk', '~> 2'
 gem 'pry', require: false, group: :production
 
 group :development, :test do

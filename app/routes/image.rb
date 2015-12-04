@@ -1,9 +1,9 @@
-require 'app/basic_auth'
+require 'app/digest_authorization'
 
 module ShareMeow
   module Routes
     class Image < Sinatra::Application
-      register Sinatra::Param
+      helpers Sinatra::DigestAuthorization
 
       configure do
         set :logging, true
@@ -13,24 +13,21 @@ module ShareMeow
         enable :use_code
       end
 
-      unless ENV['AUTH_ENABLED'] == 'false'
-        use BasicAuth, 'You need a password to do this' do |username, password|
-          username == ENV.fetch('AUTH_USERNAME') && password == ENV.fetch('AUTH_PASSWORD')
-        end
-      end
-
       get '/image' do
         content_type :json
-        param :template, String, required: true
 
         { url: ShareMeow::Image.new(params).generate_and_store! }.to_json
       end
 
-      get '/image/inline' do
+      get '/:encoded_params/:hmac_digest/image.jpg' do
         content_type :jpeg
-        param :template, String, required: true
 
-        ShareMeow::Image.new(params).to_jpg
+        unless authorized?(encoded_params: params[:encoded_params], hmac_digest: params[:hmac_digest])
+          halt 401, 'Not authorized'
+        end
+
+        decoded_params = Base64.urlsafe_decode64(params[:encoded_params])
+        ShareMeow::Image.new(JSON.parse(decoded_params)).to_jpg
       end
     end
   end

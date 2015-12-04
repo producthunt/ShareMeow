@@ -1,5 +1,4 @@
 require 'securerandom'
-require 'app/store_image'
 
 module ShareMeow
   class Image
@@ -9,13 +8,7 @@ module ShareMeow
     attr_reader :template
 
     def initialize(params)
-      @template = template_klass(params[:template]).send(:new, params)
-    end
-
-    def generate_and_store!
-      ShareMeow::App.cache.fetch(template.cache_key) do
-        ShareMeow::StoreImage.new(template.filename, to_jpg).store!
-      end
+      @template = template_klass(params['template']).send(:new, params)
     end
 
     def to_jpg
@@ -28,10 +21,6 @@ module ShareMeow
     end
 
     private
-
-    def s3_object
-      @s3_object ||= Aws::S3::Resource.new.bucket('sharemeow').object(template.filename)
-    end
 
     def template_klass(template_name)
       ImageTemplates.const_get template_name
