@@ -10,11 +10,11 @@
     },
     "WEB_CONCURRENCY": {
       "description": "The number of Puma processes to run.",
-      "value": "2",
+      "value": "2"
     },
     "MAX_THREADS": {
       "description": "The number of Puma threads to run per process.",
-      "value": "5",
+      "value": "5"
     }
   },
   "image": "heroku/ruby"
