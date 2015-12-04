@@ -1,6 +1,7 @@
 {
   "name": "ShareMeow",
   "description": "a Ruby microservice (ooh ahh) for creating super shareable, tweetable, facebook-able images from your content :heart_eyes_cat:.",
+  "logo": "https://raw.githubusercontent.com/producthunt/ShareMeow/master/public/images/emoji/unicode/1f63b.png",
   "repository": "https://github.com/producthunt/ShareMeow",
   "keywords": ["ruby", "sinatra", "images", "twitter", "product hunt"],
   "env": {
