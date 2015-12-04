@@ -7,7 +7,13 @@
   "env": {
     "SHARE_MEOW_SECRET_KEY": {
       "description": "A secret key used for authentication.",
-      "generator": "secret"
+      "generator": "secret",
+      "required": "true"
+    },
+    "BASE_URL": {
+      "description": "The URL to your deployed ShareMeow App",
+      "value": "https://app-name.herokuapp.com",
+      "required": "true"
     },
     "WEB_CONCURRENCY": {
       "description": "The number of Puma processes to run.",
