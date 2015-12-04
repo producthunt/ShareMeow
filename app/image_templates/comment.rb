@@ -11,7 +11,7 @@ module ImageTemplates
     end
 
     def allowed_options
-      %w(content name avatar_url subject_name)
+      %w(content name user_id subject_name)
     end
 
     def erb_template

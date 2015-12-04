@@ -2,7 +2,7 @@ require 'spec_helper'
 require 'image_templates/shared_examples'
 
 RSpec.describe ImageTemplates::Comment do
-  default_options = { 'avatar_url' => 'https://ph-avatars.imgix.net/787/original?w=80&h=80',
+  default_options = { 'user_id' => '787',
                       'name' => 'William Shakespurr',
                       'content' => 'Meow',
                       'subject_name' => 'Product Hunt Podcasts' }
