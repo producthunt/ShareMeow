@@ -25,7 +25,7 @@ module ShareMeow
         end
 
         content_type :jpeg
-        cache_control :public, max_age: 31536000
+        cache_control :public, max_age: 31_536_000
 
         decoded_params = Base64.urlsafe_decode64(params[:encoded_params])
         ShareMeow::Image.new(JSON.parse(decoded_params)).to_jpg
