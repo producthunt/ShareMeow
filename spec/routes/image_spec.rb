@@ -10,8 +10,13 @@ RSpec.describe ShareMeow::App do
       Base64.urlsafe_encode64({ template: 'HelloWorld', message: 'Hello, World' }.to_json)
     end
 
+    let(:secret_key) do
+      ENV['SHARE_MEOW_SECRET_KEY']
+    end
+
     let(:hmac_digest) do
-      OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('sha1'.freeze), ENV['SHARE_MEOW_SECRET_KEY'], encoded_params)
+      hmac = OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('sha1'.freeze), secret_key, encoded_params)
+      Base64.urlsafe_encode64([hmac].pack('H*'))
     end
 
     before do
@@ -25,12 +30,6 @@ RSpec.describe ShareMeow::App do
       expect(last_response.content_type).to eq 'image/jpeg'
     end
 
-    it 'returns a 401 with invalid hmac digest' do
-      get "/v1/#{encoded_params}/thisiswrong/image.jpg"
-
-      expect(last_response.status).to eq 401
-    end
-
     it 'returns a 401 if different params are sent' do
       get "/v1/thisiswrong/#{hmac_digest}/image.jpg"
 
@@ -41,6 +40,15 @@ RSpec.describe ShareMeow::App do
       get "/v1/#{encoded_params}/#{hmac_digest}/image.jpg"
 
       expect(ShareMeow::Image).to have_received(:new).with('template' => 'HelloWorld', 'message' => 'Hello, World')
+    end
+    context 'invalid key' do
+      let(:secret_key) { 'thisiswrong' }
+
+      it 'returns a 401 with invalid hmac digest' do
+        get "/v1/#{encoded_params}/#{hmac_digest}/image.jpg"
+
+        expect(last_response.status).to eq 401
+      end
     end
   end
 end
