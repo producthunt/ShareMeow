@@ -14,30 +14,37 @@ It's what we use at [Product Hunt](https://www.producthunt.com) for making beaut
 
 <img width='375px' src="https://camo.githubusercontent.com/5bed0906f5c6bd07c843246f0baccd0e8fe03b2b/68747470733a2f2f7062732e7477696d672e636f6d2f6d656469612f4356564445454f5641414164396a362e6a7067" alt="ShareMeow Preview Image" data-canonical-src="https://pbs.twimg.com/media/CVVDEEOVAAAd9j6.jpg" style="max-width:100%;">
 
-**Features:**
+## Features:
 - Supports Emoji :100::heart_eyes_cat::sparkles:
 - Custom fonts
 - Cachable images (throw cloudflare infront of it & you're good to go)
 - signed URLs via hmac digest
 
 ## The API
-todo
 
-#### GET `/v1/:encoded_params/:hmac_digest/image.jpg`
+#### GET `/v1/:encoded_params/:encoded_hmac_digest/image.jpg`
 This generates and returns a jpg.
 
-Required params: `template` + whichever params are required by your template. In this example we're using the HelloWorld template, it requires `message`.
+Required params are determined by the image template you're using.
 
-Request:
-```bash
-todo
+
+Example using `the hello_world` template:
+```Ruby
+require 'base64'
+require 'json'
+require 'openssl'
+
+json_params = { template: 'HelloWorld', message: 'Hello' }.to_json
+
+encoded_params = Base64.urlsafe_encode64(json_params)
+hmac = OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('sha1'), 'your_secret_key', encoded_params)
+hmac_digest = Base64.urlsafe_encode64([hmac].pack('H*'))
+
+image_url = "https://your-share-meow.herokuapp.com/v1/#{ encoded_params }/#{ hmac_digest }/image.jpg"
+
+
+# => "https://your-share-meow.herokuapp.com/v1/eyJ0ZW1wbGF0ZSI6IkhlbGxvV29ybGQiLCJtZXNzYWdlIjoiSGVsbG8ifQ==/-lgitNQmEs9NaiWyOCHeV137D80=/image.jpg"
 ```
-
-Response:
-```json
-todo
-```
-
 
 ## Deploy
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/producthunt/ShareMeow)
@@ -58,10 +65,11 @@ json_params = params.to_json
 encoded_params = Base64.urlsafe_encode64(json_params)
 ```
 
-Then create the HMAC signature from the encoded params and your secret key.
+Then create the HMAC signature from the encoded params and your secret key. Finish by packing and base64 encoding the signature (we do this to keep the URL shorter)
 
 ```Ruby
 hmac_signature = OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('sha1'), 'your_secret_key', encoded_params)
+encoded_hmac = Base64.urlsafe_encode64([hmac_signature].pack('H*'))
 ```
 
 When ShareMeow gets your request, it will recreate the HMAC signature using the encoded params/secret key. If it matches the signature you provided, it will generate the image. :star:
@@ -100,9 +108,7 @@ end
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake rspec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`.
+After checking out the repo, run `bundle install` to install dependencies. Then, run `rspec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
 Start the server:
 `$ puma`
