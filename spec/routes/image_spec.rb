@@ -41,6 +41,7 @@ RSpec.describe ShareMeow::App do
 
       expect(ShareMeow::Image).to have_received(:new).with('template' => 'HelloWorld', 'message' => 'Hello, World')
     end
+
     context 'invalid key' do
       let(:secret_key) { 'thisiswrong' }
 

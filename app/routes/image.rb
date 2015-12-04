@@ -20,11 +20,12 @@ module ShareMeow
       end
 
       get '/v1/:encoded_params/:encoded_hmac_digest/image.jpg' do
-        content_type :jpeg
-
         unless authorized?(encoded_params: params[:encoded_params], encoded_hmac_digest: params[:encoded_hmac_digest])
           halt 401, 'Not authorized'
         end
+
+        content_type :jpeg
+        cache_control :public, max_age: 31536000
 
         decoded_params = Base64.urlsafe_decode64(params[:encoded_params])
         ShareMeow::Image.new(JSON.parse(decoded_params)).to_jpg

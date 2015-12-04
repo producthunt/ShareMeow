@@ -13,6 +13,7 @@ Dotenv.load
 require 'sinatra/base'
 require 'base64'
 require 'openssl'
+require 'pry-byebug' if ENV['RACK_ENV'] == 'development'
 
 require 'app/image_templates/base'
 Dir['app/image_templates/*.rb'].each { |file| require file }
