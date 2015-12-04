@@ -16,69 +16,54 @@ It's what we use at [Product Hunt](https://www.producthunt.com) for making beaut
 
 **Features:**
 - Supports Emoji :100::heart_eyes_cat::sparkles:
-- Images are stored on AWS S3
-- Caching via Redis
-- HTTP Basic authentication
+- Custom fonts
+- Cachable images (throw cloudflare infront of it & you're good to go)
+- signed URLs via hmac digest
 
 ## The API
-There are two endpoints. `/image` and `/image/inline`
+todo
 
-Both are protected by HTTP Basic authentication
-
-#### GET `/image`
-This generates an image, stores it on S3 and returns the URL. Caching is enabled on this endpoint.
+#### GET `/v1/:encoded_params/:hmac_digest/image.jpg`
+This generates and returns a jpg.
 
 Required params: `template` + whichever params are required by your template. In this example we're using the HelloWorld template, it requires `message`.
 
 Request:
 ```bash
-curl -X GET -H "Authorization: Basic c2hhcmVtZW93OnZlcnlfc2VjdXJl" 'http://localhost:3000/image?template=HelloWorld&message=Hi!'
+todo
 ```
 
 Response:
 ```json
-{
-  "url": "https://sharemeow.s3.amazonaws.com/helloworld/1449102083741bdaa0.jpg"
-}
+todo
 ```
 
-#### GET `/image/inline`
-This generates an image and returns it. The image is not stored & there is no caching.
-
-Required params: `template` + whichever params are required by your template. In this example we're using the HelloWorld template, it requires `message`.
-
-Request:
-```bash
-curl -X GET -H "Authorization: Basic c2hhcmVtZW93OnZlcnlfc2VjdXJl" 'http://localhost:3000/image/inline?template=HelloWorld&message=Hi!'
-```
-
-Response:
-** todo **
 
 ## Deploy
 Info on how to deploy here.
 
-## Authentication
-Image generation is protected by HTTP basic auth. Username and password are set by environment variables. `AUTH_USERNAME` and `AUTH_PASSWORD`. These are needed for the `POST /image` endpoint.
+## Authentication :closed_lock_with_key:
+ShareMeow uses URLs signed with an HMAC signature to ensure that only people with a secret key are able to generate URLs with your service.
 
-Authentication may be disabled by setting `AUTH_ENABLED` to `false`.
+It works like this:
 
-## Caching
-Generating images can take anywhere from 500ms to 2000ms depending on the complexity. Once created, ShareMeow caches the S3 url in Redis so that it does not needlessly generate the same image again.
+Convert your parameters to JSON. Then [Base64 URL Safe encode](https://en.wikipedia.org/wiki/Base64#URL_applications) them. There are libraries available to do this in all major languages.
 
-It's recommended to set your redis Maxmemory-policy to `allkeys-lru`. When Redis runs out of memory, it will automatically delete the least used keys to make room for new keys.
+```Ruby
+# Ruby
+params = { template: 'HelloWorld', message: 'Hello, World' }
+json_params = params.to_json
 
-If using Heroku Redis, this can be enabled by running the following:
-
-```Bash
-heroku plugins:install heroku-redis
-heroku redis:maxmemory --policy allkeys-lru
+encoded_params = Base64.urlsafe_encode64(json_params)
 ```
 
-More info here: [Heroku Redis: Maxmemory-policy](https://devcenter.heroku.com/articles/heroku-redis#maxmemory-policy)
+Then create the HMAC signature from the encoded params and your secret key.
 
-**Cache Keys:**
-Image cache keys contain a digest of all files used to create the image. This means if you update your stylesheet, erb or template.rb files, the cache keys will update as well. You do not need to worry about clearing caches when making changes.
+```Ruby
+hmac_signature = OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('sha1'), 'your_secret_key', encoded_params)
+```
+
+When ShareMeow gets your request, it will recreate the HMAC signature using the encoded params/secret key. If it matches the signature you provided, it will generate the image. :star:
 
 ## Templates
 Info on how to create a new template here. :smile:
