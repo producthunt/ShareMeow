@@ -26,7 +26,7 @@ module ImageTemplates
     #
     # == Example
     #   def allowed_options
-    #     ['message', 'content', 'name']
+    #     %w(message content name)
     #   end
     #
     # Would make `options[:message]`, `options[:content]` and `options[:name]` available

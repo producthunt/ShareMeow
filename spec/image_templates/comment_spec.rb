@@ -33,6 +33,15 @@ RSpec.describe ImageTemplates::Comment do
       expect(EmojiHelper).to have_received(:emojify).with(":speech_balloon: on #{default_options['subject_name']}")
       expect(EmojiHelper).to have_received(:emojify).with(default_options['content'])
     end
+
+    it 'truncates long subject_names' do
+      allow(EmojiHelper).to receive(:emojify).and_call_original
+
+      default_options['subject_name'] = 'Audeze EL-8 Titanium Closed-Back Headphones'
+      image_template.render_options
+
+      expect(EmojiHelper).to have_received(:emojify).with(':speech_balloon: on Audeze EL-8 Titanium Closed-Back...')
+    end
   end
 
   it_behaves_like 'an ImageTemplate', default_options
