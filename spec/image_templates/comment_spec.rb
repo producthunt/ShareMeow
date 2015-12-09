@@ -40,7 +40,7 @@ RSpec.describe ImageTemplates::Comment do
       default_options['subject_name'] = 'Audeze EL-8 Titanium Closed-Back Headphones'
       image_template.render_options
 
-      expect(EmojiHelper).to have_received(:emojify).with(":speech_balloon: on Audeze EL-8 Titanium Closed-Back...")
+      expect(EmojiHelper).to have_received(:emojify).with(':speech_balloon: on Audeze EL-8 Titanium Closed-Back...')
     end
   end
 

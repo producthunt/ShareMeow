@@ -31,7 +31,7 @@ module ImageTemplates
 
     def truncate_text(text, max_length)
       return text unless text.length > max_length
-      text[0..max_length].gsub(/\s\w+\s*$/,'...')
+      text[0..max_length].gsub(/\s\w+\s*$/, '...')
     end
   end
 end
