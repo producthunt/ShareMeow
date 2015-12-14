@@ -9,6 +9,12 @@ GIT
       sinatra (~> 1.4.0)
       tilt (~> 1.3)
 
+GIT
+  remote: git://github.com/producthunt/puma.git
+  revision: 9ad1b20dee95e93ff33924a8255042247ad29d14
+  specs:
+    puma (2.15.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -52,7 +58,6 @@ GEM
     pry-byebug (1.3.2)
       byebug (~> 2.7)
       pry (~> 0.9.12)
-    puma (2.15.3)
     rack (1.6.4)
     rack-contrib (1.4.0)
       git-version-bump (~> 0.15)
@@ -120,7 +125,7 @@ DEPENDENCIES
   json
   pry
   pry-byebug
-  puma
+  puma!
   rack-contrib
   rack-standards
   rack-test
