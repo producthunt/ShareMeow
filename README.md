@@ -75,7 +75,7 @@ encoded_hmac = Base64.urlsafe_encode64([hmac_signature].pack('H*'))
 When ShareMeow gets your request, it will recreate the HMAC signature using the encoded params/secret key. If it matches the signature you provided, it will generate the image. :star:
 
 ## Templates
-Info on how to create a new template here. :smile:
+Take a look here for example templates: https://github.com/producthunt/ShareMeow/tree/master/app/image_templates.
 
 #### Custom Fonts
 Here is example css using a font from [Google Fonts](https://www.google.com/fonts).
