@@ -46,6 +46,8 @@ image_url = "https://your-share-meow.herokuapp.com/v1/#{ encoded_params }/#{ hma
 # => "https://your-share-meow.herokuapp.com/v1/eyJ0ZW1wbGF0ZSI6IkhlbGxvV29ybGQiLCJtZXNzYWdlIjoiSGVsbG8ifQ==/-lgitNQmEs9NaiWyOCHeV137D80=/image.jpg"
 ```
 
+If you're using Ruby, you can use the [ShareMeow Ruby Client](https://github.com/producthunt/ShareMeowClient) for generating URLs easily.
+
 ## Deploy
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/producthunt/ShareMeow)
 
@@ -90,7 +92,7 @@ Here is example css using a font from [Google Fonts](https://www.google.com/font
 ```
 
 #### Emoji :sparkles:
-If you'd like to render emoji, you can use the `EmojiHelper` in your templates. It converts both  unicode emoji and GitHub/Slack (`:smile:`) style emoji to images. Can do this by overriding `render_options`.
+If you'd like to render emoji, you can use the `EmojiHelper` in your templates. It converts both unicode emoji and GitHub/Slack (`:smile:`) style emoji to images. Can do this by overriding `render_options`.
 
 ```Ruby
 # images_templates/your_template.rb
