@@ -13,10 +13,6 @@ module ImageTemplates
       @render_options ||= RenderOptions.new(@options)
     end
 
-    def template_name
-      @template_name ||= self.class.name.demodulize.downcase
-    end
-
     def to_html
       Tilt.new(erb_template).render(render_options)
     end
