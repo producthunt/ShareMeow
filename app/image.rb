@@ -8,7 +8,7 @@ module ShareMeow
     attr_reader :template
 
     def initialize(params)
-      @template = template_klass(params['template']).send(:new, params)
+      @template = template_class(params['template']).send(:new, params)
     end
 
     def to_jpg
@@ -22,7 +22,7 @@ module ShareMeow
 
     private
 
-    def template_klass(template_name)
+    def template_class(template_name)
       ImageTemplates.const_get template_name
     rescue NameError
       raise NotImplementedError, "You must implement a #{template_name} template"
