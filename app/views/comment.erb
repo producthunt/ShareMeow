@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
   </head>
   <body>
-    <div class="comment">
+    <div class="comment" style="min-height: <%= options[:min_height] || 75 %>px">
       <div class="comment--header">
         <div class="comment--header--avatar">
           <img width=40 height=40 src="https://ph-avatars.imgix.net/<%= options[:user_id] %>/original?auto=format&fit=crop&crop=faces&w=80&h=80" />

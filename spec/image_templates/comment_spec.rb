@@ -21,6 +21,15 @@ RSpec.describe ImageTemplates::Comment do
     it 'renders the comment contents' do
       expect(image_template.to_html).to include default_options['content']
     end
+
+    it 'sets a default minimum height' do
+      expect(image_template.to_html).to include 'min-height: 75px'
+    end
+
+    it 'sets min-height if included in options' do
+      default_options['min_height'] = '400'
+      expect(image_template.to_html).to include 'min-height: 400px'
+    end
   end
 
   describe '#render_options' do
