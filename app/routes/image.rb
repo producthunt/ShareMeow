@@ -13,12 +13,6 @@ module ShareMeow
         enable :use_code
       end
 
-      get '/image' do
-        content_type :json
-
-        { url: ShareMeow::Image.new(params).generate_and_store! }.to_json
-      end
-
       get '/v1/:encoded_params/:encoded_hmac_digest/image.jpg' do
         unless authorized?(encoded_params: params[:encoded_params], encoded_hmac_digest: params[:encoded_hmac_digest])
           halt 401, 'Not authorized'
