@@ -27,8 +27,10 @@ This generates and returns a jpg.
 
 Required params are determined by the image template you're using.
 
+If you're using Ruby, you can use the [ShareMeow Ruby Client](https://github.com/producthunt/ShareMeowClient) for generating URLs easily.
 
-Example using `the hello_world` template:
+If you'd rather not use the client. Here is an example of how to generate the URL in Ruby.
+
 ```Ruby
 require 'base64'
 require 'json'
@@ -45,8 +47,6 @@ image_url = "https://your-share-meow.herokuapp.com/v1/#{ encoded_params }/#{ hma
 
 # => "https://your-share-meow.herokuapp.com/v1/eyJ0ZW1wbGF0ZSI6IkhlbGxvV29ybGQiLCJtZXNzYWdlIjoiSGVsbG8ifQ==/-lgitNQmEs9NaiWyOCHeV137D80=/image.jpg"
 ```
-
-If you're using Ruby, you can use the [ShareMeow Ruby Client](https://github.com/producthunt/ShareMeowClient) for generating URLs easily.
 
 ## Deploy
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/producthunt/ShareMeow)
