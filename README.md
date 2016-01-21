@@ -20,6 +20,13 @@ It's what we use at [Product Hunt](https://www.producthunt.com) for making beaut
 - Cachable images (throw cloudflare infront of it & you're good to go)
 - signed URLs via hmac digest
 
+## Getting Started
+For a quick introduction to how to use ShareMeow, take a [look
+at this excellent screencast by GoRails](https://gorails.com/episodes/sharemeow).
+
+[![ShareMeow
+Screencast](http://img.youtube.com/vi/lcMuFj3EGb4/0.jpg)](https://gorails.com/episodes/sharemeow)
+
 ## The API
 
 #### GET `/v1/:encoded_params/:encoded_hmac_digest/image.jpg`
