@@ -5,6 +5,7 @@ Status](https://travis-ci.org/producthunt/ShareMeow.svg?branch=master)](https://
 Climate](https://codeclimate.com/github/producthunt/ShareMeow/badges/gpa.svg)](https://codeclimate.com/github/producthunt/ShareMeow)
 [![Test
 Coverage](https://codeclimate.com/github/producthunt/ShareMeow/badges/coverage.svg)](https://codeclimate.com/github/producthunt/ShareMeow/coverage)
+[![Dependency Status](https://dependencyci.com/github/producthunt/ShareMeow/badge)](https://dependencyci.com/github/producthunt/ShareMeow)
 
 ShareMeow is a Ruby microservice (ooh ahh) for creating super shareable, tweetable,
 facebook-able images from your content :heart_eyes_cat:. You define a template (using HTML/CSS),
