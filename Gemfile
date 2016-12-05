@@ -2,13 +2,13 @@ source 'https://rubygems.org'
 ruby '2.2.4'
 
 gem 'sinatra', require: 'sinatra/base'
-gem 'sinatra-contrib', github: 'maccman/sinatra-contrib'
+gem 'sinatra-contrib', git: 'https://github.com/maccman/sinatra-contrib'
 gem 'sinatra-initializers'
 gem 'activesupport', require: false
 gem 'rack-standards'
 gem 'rack-contrib'
 # Using fork of Puma with a raised URI length limit. Puma's limit is 2048 chars. This forks limit is 10240.
-gem 'puma', github: 'producthunt/puma'
+gem 'puma', git: 'https://github.com/producthunt/puma'
 gem 'erubis'
 gem 'i18n'
 gem 'rake'
@@ -23,13 +23,15 @@ gem 'pry', require: false, group: :production
 
 group :development, :test do
   gem 'pry-byebug'
-  gem 'rubocop'
+  gem 'rb-readline'
+  gem 'rubocop', '~> 0.35.0'
 end
 
 group :test do
   gem 'rspec'
   gem 'rack-test'
-  gem 'codeclimate-test-reporter'
+  gem 'simplecov'
+  gem 'codeclimate-test-reporter', '~> 1.0.0'
 end
 
 group :development do

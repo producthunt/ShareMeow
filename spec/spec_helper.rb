@@ -1,5 +1,5 @@
-require 'codeclimate-test-reporter'
-CodeClimate::TestReporter.start
+require 'simplecov'
+SimpleCov.start
 
 ENV['RACK_ENV'] = 'test'
 ENV['SHARE_MEOW_SECRET_KEY'] = 'very_secret'
