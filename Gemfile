@@ -23,13 +23,15 @@ gem 'pry', require: false, group: :production
 
 group :development, :test do
   gem 'pry-byebug'
-  gem 'rubocop'
+  gem 'rb-readline'
+  gem 'rubocop', '~> 0.35.0'
 end
 
 group :test do
   gem 'rspec'
   gem 'rack-test'
-  gem 'codeclimate-test-reporter'
+  gem 'simplecov'
+  gem 'codeclimate-test-reporter', '~> 1.0.0'
 end
 
 group :development do
