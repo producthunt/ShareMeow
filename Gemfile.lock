@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/maccman/sinatra-contrib.git
+  remote: https://github.com/maccman/sinatra-contrib
   revision: 3dde2819a31791a9124d916c4449df0741af45f9
   specs:
     sinatra-contrib (1.4.1)
@@ -10,7 +10,7 @@ GIT
       tilt (~> 1.3)
 
 GIT
-  remote: git://github.com/producthunt/puma.git
+  remote: https://github.com/producthunt/puma
   revision: 9ad1b20dee95e93ff33924a8255042247ad29d14
   specs:
     puma (2.15.3)
