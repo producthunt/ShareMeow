@@ -36,7 +36,7 @@ GEM
     docile (1.1.5)
     dotenv (2.1.1)
     erubis (2.7.0)
-    gemoji (2.1.0)
+    gemoji (3.0.0)
     git-version-bump (0.15.1)
     i18n (0.7.0)
     imgkit (1.6.1)
