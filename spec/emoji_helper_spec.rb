@@ -16,5 +16,11 @@ RSpec.describe EmojiHelper do
       expect(content).to eq "<img alt=\"smiley\" src=\"#{ShareMeow::App.base_url}/images/emoji/unicode/1f603.png\" " \
                             "style=\"vertical-align:middle\" width=\"20\" height=\"20\" />"
     end
+
+    it 'does not replace unsupported emoji' do
+      content = described_class.emojify(':producthunt_kitty:')
+
+      expect(content).to eq ':producthunt_kitty:'
+    end
   end
 end

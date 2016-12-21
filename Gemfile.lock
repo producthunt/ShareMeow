@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/maccman/sinatra-contrib.git
+  remote: https://github.com/maccman/sinatra-contrib
   revision: 3dde2819a31791a9124d916c4449df0741af45f9
   specs:
     sinatra-contrib (1.4.1)
@@ -10,7 +10,7 @@ GIT
       tilt (~> 1.3)
 
 GIT
-  remote: git://github.com/producthunt/puma.git
+  remote: https://github.com/producthunt/puma
   revision: 9ad1b20dee95e93ff33924a8255042247ad29d14
   specs:
     puma (2.15.3)
@@ -18,43 +18,43 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (4.2.5)
+    activesupport (5.0.0.1)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (~> 0.7)
-      json (~> 1.7, >= 1.7.7)
       minitest (~> 5.1)
-      thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    ast (2.2.0)
+    ast (2.3.0)
     astrolabe (1.3.1)
       parser (~> 2.2)
     builder (3.2.2)
-    byebug (8.2.1)
-    codeclimate-test-reporter (0.4.8)
-      simplecov (>= 0.7.1, < 1.0.0)
-    coderay (1.1.0)
+    byebug (9.0.6)
+    codeclimate-test-reporter (1.0.3)
+      simplecov
+    coderay (1.1.1)
+    concurrent-ruby (1.0.2)
     diff-lcs (1.2.5)
     docile (1.1.5)
-    dotenv (2.0.2)
+    dotenv (2.1.1)
     erubis (2.7.0)
-    gemoji (2.1.0)
+    gemoji (3.0.0)
     git-version-bump (0.15.1)
     i18n (0.7.0)
     imgkit (1.6.1)
-    json (1.8.3)
+    json (2.0.2)
     method_source (0.8.2)
-    minitest (5.8.3)
-    multi_json (1.11.2)
-    parser (2.2.3.0)
-      ast (>= 1.1, < 3.0)
+    minitest (5.10.1)
+    multi_json (1.12.1)
+    parser (2.3.3.1)
+      ast (~> 2.2)
     powerpack (0.1.1)
-    pry (0.10.3)
+    pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
-    pry-byebug (3.3.0)
-      byebug (~> 8.0)
+    pry-byebug (3.4.1)
+      byebug (~> 9.0)
       pry (~> 0.10)
-    rack (1.6.4)
+    rack (1.6.5)
     rack-contrib (1.4.0)
       git-version-bump (~> 0.15)
       rack (~> 1.4)
@@ -63,21 +63,22 @@ GEM
     rack-standards (0.0.1)
     rack-test (0.6.3)
       rack (>= 1.0)
-    rainbow (2.0.0)
-    rake (10.4.2)
-    rspec (3.4.0)
-      rspec-core (~> 3.4.0)
-      rspec-expectations (~> 3.4.0)
-      rspec-mocks (~> 3.4.0)
-    rspec-core (3.4.1)
-      rspec-support (~> 3.4.0)
-    rspec-expectations (3.4.0)
+    rainbow (2.1.0)
+    rake (11.3.0)
+    rb-readline (0.5.3)
+    rspec (3.5.0)
+      rspec-core (~> 3.5.0)
+      rspec-expectations (~> 3.5.0)
+      rspec-mocks (~> 3.5.0)
+    rspec-core (3.5.4)
+      rspec-support (~> 3.5.0)
+    rspec-expectations (3.5.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.4.0)
-    rspec-mocks (3.4.0)
+      rspec-support (~> 3.5.0)
+    rspec-mocks (3.5.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.4.0)
-    rspec-support (3.4.1)
+      rspec-support (~> 3.5.0)
+    rspec-support (3.5.0)
     rubocop (0.35.1)
       astrolabe (~> 1.3)
       parser (>= 2.2.3.0, < 3.0)
@@ -85,15 +86,15 @@ GEM
       rainbow (>= 1.99.1, < 3.0)
       ruby-progressbar (~> 1.7)
       tins (<= 1.6.0)
-    ruby-progressbar (1.7.5)
-    rumoji (0.4.1)
-    simplecov (0.11.1)
+    ruby-progressbar (1.8.1)
+    rumoji (0.5.0)
+    simplecov (0.12.0)
       docile (~> 1.1.0)
-      json (~> 1.8)
+      json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.0)
-    sinatra (1.4.6)
-      rack (~> 1.4)
+    sinatra (1.4.7)
+      rack (~> 1.5)
       rack-protection (~> 1.4)
       tilt (>= 1.3, < 3)
     sinatra-initializers (0.1.4)
@@ -112,7 +113,7 @@ DEPENDENCIES
   activesupport
   builder
   bundler
-  codeclimate-test-reporter
+  codeclimate-test-reporter (~> 1.0.0)
   dotenv
   erubis
   gemoji
@@ -126,9 +127,11 @@ DEPENDENCIES
   rack-standards
   rack-test
   rake
+  rb-readline
   rspec
-  rubocop
+  rubocop (~> 0.35.0)
   rumoji
+  simplecov
   sinatra
   sinatra-contrib!
   sinatra-initializers

@@ -5,6 +5,7 @@ Status](https://travis-ci.org/producthunt/ShareMeow.svg?branch=master)](https://
 Climate](https://codeclimate.com/github/producthunt/ShareMeow/badges/gpa.svg)](https://codeclimate.com/github/producthunt/ShareMeow)
 [![Test
 Coverage](https://codeclimate.com/github/producthunt/ShareMeow/badges/coverage.svg)](https://codeclimate.com/github/producthunt/ShareMeow/coverage)
+[![Dependency Status](https://dependencyci.com/github/producthunt/ShareMeow/badge)](https://dependencyci.com/github/producthunt/ShareMeow)
 
 ShareMeow is a Ruby microservice (ooh ahh) for creating super shareable, tweetable,
 facebook-able images from your content :heart_eyes_cat:. You define a template (using HTML/CSS),
@@ -20,6 +21,13 @@ It's what we use at [Product Hunt](https://www.producthunt.com) for making beaut
 - Cachable images (throw cloudflare infront of it & you're good to go)
 - signed URLs via hmac digest
 
+## Getting Started
+For a quick introduction to how to use ShareMeow, take a [look
+at this excellent screencast by GoRails](https://gorails.com/episodes/sharemeow).
+
+[![ShareMeow
+Screencast](http://img.youtube.com/vi/lcMuFj3EGb4/0.jpg)](https://gorails.com/episodes/sharemeow)
+
 ## The API
 
 #### GET `/v1/:encoded_params/:encoded_hmac_digest/image.jpg`
@@ -27,8 +35,10 @@ This generates and returns a jpg.
 
 Required params are determined by the image template you're using.
 
+If you're using Ruby, you can use the [ShareMeow Ruby Client](https://github.com/producthunt/ShareMeowClient) for generating URLs easily.
 
-Example using `the hello_world` template:
+If you'd rather not use the client. Here is an example of how to generate the URL in Ruby.
+
 ```Ruby
 require 'base64'
 require 'json'
@@ -45,8 +55,6 @@ image_url = "https://your-share-meow.herokuapp.com/v1/#{ encoded_params }/#{ hma
 
 # => "https://your-share-meow.herokuapp.com/v1/eyJ0ZW1wbGF0ZSI6IkhlbGxvV29ybGQiLCJtZXNzYWdlIjoiSGVsbG8ifQ==/-lgitNQmEs9NaiWyOCHeV137D80=/image.jpg"
 ```
-
-If you're using Ruby, you can use the [ShareMeow Ruby Client](https://github.com/producthunt/ShareMeowClient) for generating URLs easily.
 
 ## Deploy
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/producthunt/ShareMeow)
