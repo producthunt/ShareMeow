@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <div class="question" style="min-height: <%= options[:min_height] || 75 %>px">
+      <div class="question--content">
+        <p>
+          <%= options[:content] %>
+        </p>
+      </div>
+      <div class="question--footer">
+        <div class="question--footer--avatar">
+          <img width=40 height=40 src="https://ph-avatars.imgix.net/<%= options[:user_id] %>/original?auto=format&fit=crop&crop=faces&w=80&h=80" />
+        </div>
+        <div class="question--footer--user-name">
+          <h2><%= options[:name] %></h2>
+        </div>
+        <div class="question--footer--logo">
+          <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M40 20c0 11.046-8.954 20-20 20S0 31.046 0 20 8.954 0 20 0s20 8.954 20 20" fill="#DA552F"></path><path d="M22.667 20H17v-6h5.667c1.656 0 3 1.343 3 3s-1.344 3-3 3m0-10H13v20h4v-6h5.667c3.866 0 7-3.134 7-7s-3.134-7-7-7" fill="#FFF"></path></g></svg>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
