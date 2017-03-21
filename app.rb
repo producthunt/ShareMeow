@@ -9,6 +9,8 @@ $LOAD_PATH << File.expand_path('../lib', __FILE__)
 require 'dotenv'
 Dotenv.load
 
+# Hello this is a example pull request
+
 # Require base
 require 'sinatra/base'
 require 'base64'
