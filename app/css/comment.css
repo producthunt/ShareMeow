@@ -105,6 +105,9 @@ h2 {
   padding-top: 0px;
   padding-bottom: 0px;
   margin: 0px;
+}
+
+.comment--content p {
   white-space: pre-line;
   word-wrap: break-word;
 }
