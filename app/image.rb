@@ -11,6 +11,14 @@ module ShareMeow
       @template = template_class(params['template']).send(:new, params)
     end
 
+    def here_is_some_code
+      true
+    end
+
+    def another_method
+      false
+    end
+
     def to_jpg
       options = DEFAULT_OPTIONS.merge(width: template.image_width, quality: template.image_quality)
 
