@@ -15,6 +15,7 @@ module ShareMeow
 
       get 'thisissomeaesomecode' do
         # hello!
+        # another thing!
       end
 
       get '/v1/:encoded_params/:encoded_hmac_digest/image.jpg' do
