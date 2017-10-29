@@ -13,6 +13,10 @@ module ShareMeow
         enable :use_code
       end
 
+      get 'thisissomeaesomecode' do
+        # hello!
+      end
+
       get '/v1/:encoded_params/:encoded_hmac_digest/image.jpg' do
         unless authorized?(encoded_params: params[:encoded_params], encoded_hmac_digest: params[:encoded_hmac_digest])
           halt 401, 'Not authorized'
