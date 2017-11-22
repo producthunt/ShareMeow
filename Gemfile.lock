@@ -59,7 +59,7 @@ GEM
     rack-protection (1.5.3)
       rack
     rack-standards (0.0.1)
-    rack-test (0.8.0)
+    rack-test (0.8.2)
       rack (>= 1.0, < 3)
     rainbow (2.2.2)
       rake
