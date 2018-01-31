@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.4.2'
+ruby '2.5.0'
 
 gem 'sinatra', require: 'sinatra/base'
 gem 'sinatra-contrib', git: 'https://github.com/maccman/sinatra-contrib'
@@ -18,13 +18,13 @@ gem 'dotenv'
 gem 'imgkit'
 gem 'rumoji'
 gem 'gemoji'
-gem 'wkhtmltoimage-binary'
 gem 'pry', require: false, group: :production
 
 group :development, :test do
   gem 'pry-byebug'
   gem 'rb-readline'
   gem 'rubocop', '~> 0.35.0'
+  gem 'wkhtmltoimage-binary'
 end
 
 group :test do
