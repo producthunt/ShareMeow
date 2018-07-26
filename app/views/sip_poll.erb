@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body
+    style="background: url('http://ph-files.imgix.net/<%= options[:thumbnail_uuid] %>?auto=format&balph=60&blend=000000&blur=20&bm=normal&fit=crop&h=1280&w=720');">
+    <div class="container">
+      <div class="poll">
+        <h2 class="poll--poll-question">
+          <%= options[:poll_question] %>
+        </h2>
+        <div class="poll--content">
+          <% options[:poll_options].each do |poll_option| %>
+            <div class="poll--content--poll-option">
+              <div class="poll--content--poll-option--text">
+                <span class="poll--content--poll-option--option <%= poll_option['voted'] ? 'votedText' : 'grey' %>">
+                  <%= poll_option["option"] %>
+                </span>
+                <span class="poll--content--poll-option--percentage <%= poll_option['voted'] ? 'offWhite' : 'grey' %>">
+                  <%= poll_option["percentage"] %>%
+                </span>
+              </div>
+              <div 
+                class="poll--content--poll-option--percentage-container <%= poll_option['voted'] ? 'voted' : nil %>"
+                style="width: <%= poll_option["percentage"] %>%;"
+              ></div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
