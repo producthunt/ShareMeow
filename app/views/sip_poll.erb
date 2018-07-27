@@ -15,15 +15,15 @@
             <div class="poll--content--poll-option">
               <div class="poll--content--poll-option--text">
                 <span class="poll--content--poll-option--option <%= poll_option['voted'] ? 'votedText' : 'grey' %>">
-                  <%= poll_option["option"] %>
+                  <%= poll_option[:option] %>
                 </span>
                 <span class="poll--content--poll-option--percentage <%= poll_option['voted'] ? 'offWhite' : 'grey' %>">
-                  <%= poll_option["percentage"] %>%
+                  <%= poll_option[:percentage] %>%
                 </span>
               </div>
-              <div 
+              <div
                 class="poll--content--poll-option--percentage-container <%= poll_option['voted'] ? 'voted' : nil %>"
-                style="width: <%= poll_option["percentage"] %>%;"
+                style="width: <%= poll_option[:css_percentage] %>;"
               ></div>
             </div>
           <% end %>
