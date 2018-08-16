@@ -10,6 +10,12 @@ GIT
       tilt (~> 1.3)
 
 GIT
+  remote: https://github.com/mwunsch/rumoji
+  revision: ce802a9911121991a3cd68306fb926e5dd4eebaf
+  specs:
+    rumoji (0.5.0)
+
+GIT
   remote: https://github.com/producthunt/puma
   revision: 9ad1b20dee95e93ff33924a8255042247ad29d14
   specs:
@@ -86,7 +92,6 @@ GEM
       ruby-progressbar (~> 1.7)
       tins (<= 1.6.0)
     ruby-progressbar (1.9.0)
-    rumoji (0.5.0)
     simplecov (0.13.0)
       docile (~> 1.1.0)
       json (>= 1.8, < 3)
@@ -128,7 +133,7 @@ DEPENDENCIES
   rb-readline
   rspec
   rubocop (~> 0.35.0)
-  rumoji
+  rumoji!
   simplecov
   sinatra
   sinatra-contrib!

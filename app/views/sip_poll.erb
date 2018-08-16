@@ -14,17 +14,19 @@
           <% options[:poll_options].each do |poll_option| %>
             <div class="poll--content--poll-option">
               <div class="poll--content--poll-option--text">
-                <span class="poll--content--poll-option--option <%= poll_option['voted'] ? 'votedText' : 'grey' %>">
+                <span class="poll--content--poll-option--option <%= poll_option['voted'] ? 'bold' : nil %>">
+                  <img class='poll-icon'  src="https://s3.amazonaws.com/producthunt/static/sip/sip-poll-<%= poll_option['voted'] ? 'check' : 'empty' %>.svg" />
                   <%= poll_option[:option] %>
-                </span>
-                <span class="poll--content--poll-option--percentage <%= poll_option['voted'] ? 'offWhite' : 'grey' %>">
-                  <%= poll_option[:percentage] %>%
                 </span>
               </div>
               <div
-                class="poll--content--poll-option--percentage-container <%= poll_option['voted'] ? 'voted' : nil %>"
-                style="width: <%= poll_option[:css_percentage] %>;"
+                class="poll--content--poll-option--percentage-container"
               ></div>
+                <div
+                  class="poll--content--poll-option--percentage-container-fill <%= poll_option['voted'] ? 'voted' : nil %>"
+                  style="width: <%= poll_option['percentage'] %>%;"
+                >
+                </div>
             </div>
           <% end %>
         </div>

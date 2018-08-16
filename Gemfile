@@ -16,7 +16,7 @@ gem 'builder'
 gem 'json'
 gem 'dotenv'
 gem 'imgkit'
-gem 'rumoji'
+gem 'rumoji', git: 'https://github.com/mwunsch/rumoji'
 gem 'gemoji'
 gem 'pry', require: false, group: :production
 
