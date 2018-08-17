@@ -1,7 +1,10 @@
 module ImageTemplates
   class SipPoll < Base
     def render_options
-      @options[:poll_options] = percentage_for_css(@options[:poll_options])
+      @options[:poll_question] = EmojiHelper.emojify(@options[:poll_question])
+      @options[:poll_options] = @options[:poll_options].map do |option|
+        option.merge({ 'option': EmojiHelper.emojify(option['option'], strip: true) })
+      end
       super
     end
 
@@ -20,25 +23,5 @@ module ImageTemplates
     def image_width
       450
     end
-
-    private
-
-    def percentage_for_css(poll_options)
-      poll_options.map do |poll_option|
-        # NOTE (kristian): Kinda hacky approach to some wkhtmltoimage limitations by
-        # manually defining an offset percentage for this container
-        percentage = if poll_option['percentage'] > 1
-          poll_option['percentage'] - 1
-        else
-          0
-        end
-
-        {
-          option: poll_option['option'],
-          percentage: poll_option['percentage'],
-          css_percentage: "#{percentage}%"
-        }
-      end
-    end
-  end
+9 end
 end
