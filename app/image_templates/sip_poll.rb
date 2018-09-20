@@ -23,5 +23,5 @@ module ImageTemplates
     def image_width
       450
     end
-9 end
+  end
 end
