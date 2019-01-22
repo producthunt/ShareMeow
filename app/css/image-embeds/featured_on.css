@@ -3,6 +3,8 @@ html, body {
   font-size: 14px;
   font-weight: 400;
   margin: 0px;
+  padding: 0px;
+  background: #fff 
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -16,7 +18,6 @@ h1, h2, h3, h4, h5, h6, p {
 .container {
   padding: 5px;
   border-radius: 6px;
-  border: 1px solid  #da552f;
   width: 245px;
   height: 45px;
 }
@@ -24,7 +25,6 @@ h1, h2, h3, h4, h5, h6, p {
 .logo {
   width: 30px;
   padding: 7px 5px;
-  /* display: inline-block; */
   float: left;
 }
 
