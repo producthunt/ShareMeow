@@ -4,11 +4,9 @@ html, body {
   font-weight: 400;
   margin: 0px;
   padding: 0px;
-  background: #fff 
 }
 
 h1, h2, h3, h4, h5, h6, p {
-  color: black;
   text-align: center;
   margin: 0px;
   margin-block-start: 0px;
@@ -17,7 +15,6 @@ h1, h2, h3, h4, h5, h6, p {
 
 .container {
   padding: 5px;
-  border-radius: 6px;
   width: 245px;
   height: 45px;
 }
@@ -45,4 +42,28 @@ h1, h2, h3, h4, h5, h6, p {
 .upvote {
   padding-bottom: 3px;
   margin-left: 14px;
+}
+
+.dark-theme-container {
+  background-color: #000;
+}
+
+.light-theme-container {
+  background: #fff;
+}
+
+.dark-theme-text {
+  color: #fff;
+}
+
+.light-theme-text {
+  color: #000;
+}
+
+.dark-theme-vote {
+  fill: #fff;
+}
+
+.light-theme-vote {
+  fill: #000;
 }

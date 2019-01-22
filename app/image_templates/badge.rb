@@ -1,7 +1,13 @@
 module ImageTemplates
   class Badge < Base
+    def render_options
+      @options['theme'] = @options['theme'] || 'light-theme'
+
+      super
+    end
+
     def allowed_options
-      %w(icon title subtitle)
+      %w(icon title subtitle theme)
     end
 
     def erb_template

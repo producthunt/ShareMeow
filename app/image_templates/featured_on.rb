@@ -2,12 +2,13 @@ module ImageTemplates
   class FeaturedOn < Base
     def render_options
       @options['text'] = @options['text'] || 'Find us'
+      @options['theme'] = @options['theme'] || 'light-theme'
 
       super
     end
 
     def allowed_options
-      %w(text upvote_count)
+      %w(text upvote_count theme)
     end
 
     def erb_template
