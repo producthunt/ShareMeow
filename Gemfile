@@ -7,8 +7,7 @@ gem 'sinatra-initializers'
 gem 'activesupport', require: false
 gem 'rack-standards'
 gem 'rack-contrib'
-# Using fork of Puma with a raised URI length limit. Puma's limit is 2048 chars. This forks limit is 10240.
-gem 'puma', git: 'https://github.com/producthunt/puma'
+gem 'puma'
 gem 'erubis'
 gem 'i18n'
 gem 'rake'
