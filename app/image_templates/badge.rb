@@ -1,25 +1,26 @@
 module ImageTemplates
   class Badge < Base
     def render_options
+      @options['icon'] = @options['icon'] || 'default'
       @options['theme'] = @options['theme'] || 'light-theme'
 
       super
     end
 
     def allowed_options
-      %w(icon title subtitle theme)
+      %w(icon title subtitle upvote_count theme)
     end
 
     def erb_template
-      'app/views/image-embeds/badge.erb'
+      'app/views/badge.erb'
     end
 
     def css_stylesheet
-      'app/css/image-embeds/badge.css'
+      'app/css/badge.css'
     end
 
     def image_width
-      200
+      250
     end
   end
 end

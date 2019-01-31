@@ -29,13 +29,28 @@ h1, h2, h3, h4, h5, h6, p {
   display: inline-block;
   margin-top: 10px;
   margin-left: 10px;
-  width: 150px;
+  /* width: 100px; */
+  width: auto;
+  max-width: 150px;
 }
 
 .subtitle {
   color: #999;
   font-size: 12px;
   margin-top: 3px;
+}
+
+.vote-wrapper {
+  float: right;
+  border-left: 1px solid #da552f;
+  margin-top: 5px;
+  padding-left: 3px;
+  width: 40px;
+}
+
+.upvote {
+  padding-bottom: 3px;
+  margin-left: 14px;
 }
 
 .dark-theme-container {
@@ -59,5 +74,13 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .light-theme-icon {
+  fill: #000;
+}
+
+.dark-theme-vote {
+  fill: #fff;
+}
+
+.light-theme-vote {
   fill: #000;
 }
