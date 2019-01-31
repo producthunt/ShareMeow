@@ -28,15 +28,15 @@
 		  <% end %>
       </div>
       <div class="aside">
-        <h5 class="<%= options[:theme] %>-text"><%= options[:title] %></h5>
-        <p class="subtitle"><%= options[:subtitle] %></p>
+        <h5 class="title <%= options[:theme] %>-text"><%= options[:title].upcase %></h5>
+        <p class="subtitle <%= options[:theme] %>-text"><%= options[:subtitle] %></p>
       </div>
       <% if options[:upvote_count] && options[:upvote_count] > 0 %>
       <div class="vote-wrapper">
         <div class="upvote <%= options[:theme] %>-vote">
           <svg width="9" height="8" viewBox="0 0 9 8" xmlns="http://www.w3.org/2000/svg"><path d="M9 8H0l4.5-8L9 8z" fill-rule="evenodd"/></svg>
         </div>
-        <h3 class="<%= options[:theme] %>-text"><%= options[:upvote_count] %></h3>
+        <h3 class="upvote-label <%= options[:theme] %>-text"><%= options[:upvote_count] %></h3>
       </div>
       <% end %>
    </div>

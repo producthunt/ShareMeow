@@ -20,7 +20,7 @@ module ImageTemplates
     end
 
     def image_width
-      250
+      220
     end
   end
 end
