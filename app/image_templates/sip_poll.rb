@@ -3,13 +3,13 @@ module ImageTemplates
     def render_options
       @options[:poll_question] = EmojiHelper.emojify(@options[:poll_question])
       @options[:poll_options] = @options[:poll_options].map do |option|
-        option.merge({ 'option': EmojiHelper.emojify(option['option'], strip: true) })
+        option.merge('option': EmojiHelper.emojify(option['option'], strip: true))
       end
       super
     end
 
     def allowed_options
-      %w[poll_question poll_options thumbnail_uuid]
+      %w(poll_question poll_options thumbnail_uuid)
     end
 
     def erb_template
