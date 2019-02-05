@@ -1,4 +1,4 @@
-FROM ruby:2.5.0-alpine
+FROM ruby:2.5.3-alpine
 LABEL maintainer="dev+sharemeow@producthunt.com"
 
 RUN apk add --no-cache \
