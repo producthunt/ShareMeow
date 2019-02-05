@@ -10,7 +10,7 @@ module ShareMeow
       end
 
       get '/' do
-        'ShareMeow 😻'
+        'ShareMeow 😻 🚀'
       end
     end
   end
