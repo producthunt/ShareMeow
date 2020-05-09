@@ -1,0 +1,88 @@
+.paper{
+  background: #fafafa;
+  padding: 3rem;
+   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+.masked{
+  -webkit-mask-image: url("https://socialcred.plaqad.com/packs/media/shared/assets/images/mask-xs-8b76aff8b34b75f28586e710d7fad122.svg");
+  mask-image: url("https://socialcred.plaqad.com/packs/media/shared/assets/images/mask-xs-8b76aff8b34b75f28586e710d7fad122.svg");
+  -webkit-mask-position: center center;
+  mask-position: center center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  mask-size: 100%;
+  -webkit-mask-size: 100%;
+}
+.rounded-full{
+  border-radius: 9999px;
+}
+.shadow-md{ box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);}
+.image-card{
+   width:50%;
+   margin: auto;
+  margin-top:1rem;
+  margin-bottom:1rem;
+  padding-bottom: 4rem;
+  padding-top: 4rem;
+  
+}
+.avatar-verified-badge{
+   position:absolute;
+  z-index: 2000;
+  left: 0;
+  right:0;
+  margin-left:auto;
+  padding-top:1.5rem;
+  top:0;
+  width: 8.333333%;
+}
+.avatar-container{
+  width:60%;
+  margin:auto;
+}
+.avatar-box{
+  position:relative;
+  z-index: 1000;
+  margin:auto;
+  width: 100%;
+}
+.avatar-name {
+  padding-top: 0.5rem;
+  font-size: 2.25rem;
+  font-weight: 700;
+  text-align: center;
+  color: #252525;
+  line-height:0px !important;
+}
+
+.rank{ background:url('http://socialcred.plaqad.com/packs/media/shared/assets/images/jagged-fill-12b960eeefc54e54fd991684867d788b.png') no-repeat;
+  background-position:center;
+  display:flex;
+  padding: 1rem;
+  object-fit: contain;
+  align-items: center;
+  justify-content: center;
+}
+
+.rank-emoji{
+  font-size: 2rem;
+  line-height:0px !important;
+}
+.rank-title{
+  color:#8396EE;
+  font-size: 1rem;
+  line-height:0px !important;
+  padding-bottom:.4rem;
+}
+.rank-text{
+  color:#fff;
+  font-weight: normal;
+  font-size: 1.2rem;
+  line-height:0px !important;
+}
+.ml-3{
+  margin-left: .65rem;
+}
+.text-left{
+  	text-align: left;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <div class="paper" style="min-height: <%= options[:min_height] || 475 %>px">
+      <div class="image-card shadow-md">
+        <div class="avatar-container">
+          <div class="avatar-box">
+            <% if options[:verified] %>   
+              <div class="avatar-verified-badge">
+                  <img src="/images/tick--white.svg" alt="Verified tick" />
+              </div>
+            <% end %>
+            <div class="" style="width:100%;">
+              <img style="width:100%;" class="masked rounded-full" src="<%= options[:profile_image] %>" alt="">
+            </div>
+          </div>
+        </div>
+        <p class="avatar-name"><%= options[:name] %></p>
+        <div class="rank">
+          <div>
+            <p class="rank-emoji"><%= options[:rank_emoji] %></p>
+          </div>
+          <div class="ml-3 text-left">
+            <p class="rank-title"> Rank </p>
+            <p class="rank-text"><%= options[:rank] %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
