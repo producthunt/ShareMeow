@@ -40,7 +40,7 @@ GEM
     i18n (1.5.3)
       concurrent-ruby (~> 1.0)
     imgkit (1.6.1)
-    json (2.1.0)
+    json (2.3.0)
     method_source (0.9.2)
     minitest (5.14.1)
     multi_json (1.13.1)
